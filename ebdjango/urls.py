@@ -19,5 +19,6 @@ import views
 
 urlpatterns = [
     url('^$', views.index, name='index'),
+    url('^/dupa$', views.index2(), name='index2'),
     url(r'^admin/', admin.site.urls),
 ]
