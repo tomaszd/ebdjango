@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea8408c2-8581-4d86-9f04-61dba78a1d03" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/forestbridge.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ebdjango/coming_soon.html" afterPath="$PROJECT_DIR$/templates/ebdjango/coming_soon.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -323,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548153666970</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add simple template">
+      <created>1548155284608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1548155284608</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -640,10 +647,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1548155258842" expanded="true" signature="43543:43560" ph="..." />
-            <marker date="1548155258842" expanded="true" signature="43543:43578" ph="..." />
-            <marker date="1548155258842" expanded="true" signature="43543:43591" ph="..." />
-            <marker date="1548155258842" expanded="true" signature="43543:43606" ph="..." />
+            <marker date="1548155288835" expanded="true" signature="43025:43042" ph="..." />
+            <marker date="1548155288835" expanded="true" signature="43025:43060" ph="..." />
+            <marker date="1548155288835" expanded="true" signature="43025:43073" ph="..." />
+            <marker date="1548155288835" expanded="true" signature="43025:43088" ph="..." />
           </folding>
         </state>
       </provider>
