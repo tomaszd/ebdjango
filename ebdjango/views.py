@@ -15,3 +15,23 @@ def index2(request):
         'title': title_string,
     })
     return HttpResponse(template.render(context))
+
+
+
+def example(request):
+    template = loader.get_template("ebdjango/index2.html")
+    title_string = "This is a title"
+    context = RequestContext(request, {
+        'title': title_string,
+    })
+    return HttpResponse(template.render(context))
+
+
+def coming_soon(request):
+    template = loader.get_template("ebdjango/coming_soon.html")
+    title_string = "This is a title"
+    context = RequestContext(request, {
+        'title': title_string,
+    })
+    return HttpResponse(template.render(context))
+

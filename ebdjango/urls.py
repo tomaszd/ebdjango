@@ -20,5 +20,7 @@ import views
 urlpatterns = [
     url('^$', views.index, name='index'),
     url('^dupa/$', views.index2, name='index2'),
+    url('^example/$', views.example, name='example'),
+    url('^coming_soon/$', views.coming_soon, name='coming_soon'),
     url(r'^admin/', admin.site.urls),
 ]
