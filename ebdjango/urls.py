@@ -17,10 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     url('^$', views.index, name='index'),
     url('^dupa/$', views.index2, name='index2'),
     url('^example/$', views.example, name='example'),
     url('^coming_soon/$', views.coming_soon, name='coming_soon'),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
