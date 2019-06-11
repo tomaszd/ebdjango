@@ -8,3 +8,7 @@
 /.idea/workspace.xml
 .ebextensions/.elasticbeanstalk/
 .elasticbeanstalk/
+bin/
+lib/
+Would skip repository local/
+share/
