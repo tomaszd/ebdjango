@@ -64,6 +64,10 @@ def get_cards(request):
         data = json.load(json_file)
 
     what_to_show = data if data else  {"nothing_to_show": True}
+    # list_of_cards=[]
+    # for karta in data:
+    #    list_of_cards.append(karta)
+    #
+    # newlist = sorted(list_of_cards, key=lambda k: k['nazwa'])
 
-    print data
-    return JsonResponse(data, safe=False)
+    return JsonResponse(what_to_show, safe=False)
