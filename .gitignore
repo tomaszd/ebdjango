@@ -12,3 +12,5 @@ bin/
 lib/
 Would skip repository local/
 share/
+*.pyc
+/local/

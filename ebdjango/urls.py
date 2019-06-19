@@ -25,5 +25,6 @@ urlpatterns = [
     url('^dupa/$', views.index2, name='index2'),
     url('^example/$', views.example, name='example'),
     url('^coming_soon/$', views.coming_soon, name='coming_soon'),
+    url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
