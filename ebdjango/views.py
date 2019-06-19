@@ -46,9 +46,9 @@ def tvsettings(request):
 
 
 def dynamic_tvsettings(request):
-    tvSettingObject = TVSetting.objects.all().get(0)
+    tvSettingObject = TVSetting.objects.first()
     return JsonResponse({'color': tvSettingObject.color,
-                         'size': 5,
-                         'theme': 'dark',
+                         'size': tvSettingObject.size,
                          'featuredApps': [1, 2, "youtube", 5.0],
-                         'themeURL': 'https://www.istockphoto.com/pl/zdj%C4%99cie/golden-cebuli-na-drewnianym-tle-rustykalnym-gm480134211-36493838'})
+                         'publication_date': tvSettingObject.pub_date,
+                         'themeURL': tvSettingObject.themeURL})
