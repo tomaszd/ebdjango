@@ -25,4 +25,12 @@ cd ebdjango/ebdjango
 python manage.py runserver
 migrations->
 python manage.py makemigrations ebdjango
+python manage.py collectstatic
+
+
+python manage.py shell
+from ebdjango.models import TVSetting
+In [2]: TVSetting.objects.all()
+Out[2]: []
+
 
