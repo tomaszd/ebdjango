@@ -1,6 +1,8 @@
 from django.http import HttpResponse, JsonResponse
 from django.template import loader, RequestContext
 
+from ebdjango.models import TVSetting
+
 
 def index(request):
     return HttpResponse("bababababaaba12334")
@@ -15,7 +17,6 @@ def index2(request):
         'title': title_string,
     })
     return HttpResponse(template.render(context))
-
 
 
 def example(request):
@@ -36,10 +37,18 @@ def coming_soon(request):
     return HttpResponse(template.render(context))
 
 
-
 def tvsettings(request):
     return JsonResponse({'color': 'blue',
                          'size': 5,
                          'theme': 'dark',
-                         'featuredApps':[1,2,"youtube",5.0],
+                         'featuredApps': [1, 2, "youtube", 5.0],
+                         'themeURL': 'https://www.istockphoto.com/pl/zdj%C4%99cie/golden-cebuli-na-drewnianym-tle-rustykalnym-gm480134211-36493838'})
+
+
+def dynamic_tvsettings(request):
+    tvSettingObject = TVSetting.objects.all().get(0)
+    return JsonResponse({'color': tvSettingObject.color,
+                         'size': 5,
+                         'theme': 'dark',
+                         'featuredApps': [1, 2, "youtube", 5.0],
                          'themeURL': 'https://www.istockphoto.com/pl/zdj%C4%99cie/golden-cebuli-na-drewnianym-tle-rustykalnym-gm480134211-36493838'})

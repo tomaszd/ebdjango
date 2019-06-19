@@ -23,4 +23,6 @@ how to start :
 
 cd ebdjango/ebdjango
 python manage.py runserver
+migrations->
+python manage.py makemigrations ebdjango
 
