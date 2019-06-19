@@ -1,3 +1,6 @@
+# coding=utf-8
+import json
+
 from django.http import HttpResponse, JsonResponse
 from django.template import loader, RequestContext
 
@@ -52,3 +55,15 @@ def dynamic_tvsettings(request):
                          'featuredApps': [1, 2, "youtube", 5.0],
                          'publication_date': tvSettingObject.pub_date,
                          'themeURL': tvSettingObject.themeURL})
+
+
+def get_cards(request):
+    path_to_cards_file = './static/ebdjango/resources/results.txt'
+
+    with open(path_to_cards_file) as json_file:
+        data = json.load(json_file)
+
+    what_to_show = {"nothing_to_sho": True}
+
+    print data
+    return JsonResponse(data, safe=False)

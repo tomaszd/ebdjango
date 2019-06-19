@@ -25,6 +25,7 @@ urlpatterns = [
                   url('^dupa/$', views.index2, name='index2'),
                   url('^example/$', views.example, name='example'),
                   url('^coming_soon/$', views.coming_soon, name='coming_soon'),
+                  url('^api/cards/$', views.get_cards, name='get_cards'),
                   url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
                   url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
                   url(r'^admin/', admin.site.urls),
