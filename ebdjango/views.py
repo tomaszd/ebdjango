@@ -37,7 +37,6 @@ def coming_soon(request):
 
 
 
-
 def tvsettings(request):
     return JsonResponse({'color': 'blue',
                          'size': 5,
