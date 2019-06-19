@@ -13,6 +13,7 @@ When the environment update process completes, open your web site with eb open:
 
 ~/ebdjango$ eb open
 
+ (http://django-env.grtw6epeki.eu-west-3.elasticbeanstalk.com)
 
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
 
