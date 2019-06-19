@@ -63,7 +63,7 @@ def get_cards(request):
     with open(path_to_cards_file) as json_file:
         data = json.load(json_file)
 
-    what_to_show = {"nothing_to_sho": True}
+    what_to_show = data if data else  {"nothing_to_show": True}
 
     print data
     return JsonResponse(data, safe=False)
