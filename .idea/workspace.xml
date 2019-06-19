@@ -2,103 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea8408c2-8581-4d86-9f04-61dba78a1d03" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/ebdjango/img/favicon.ico" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.ebextensions/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.ebextensions/django.config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/ebdjango.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/ebdjango/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/ebdjango/settings.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/ebdjango/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/ebdjango/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/ebdjango/wsgi.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/changelists.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/css/widgets.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/fonts/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/fonts/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/calendar-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/forestbridge.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/gis/move_vertex_off.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/gis/move_vertex_on.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-addlink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-alert.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-calendar.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-changelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-clock.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-deletelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-no.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-unknown-alt.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-unknown.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/icon-yes.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/inline-delete.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/search.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/selector-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/sorting-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/tooltag-add.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/img/tooltag-arrowright.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/SelectBox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/SelectFilter2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/actions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/actions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/collapse.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/inlines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/inlines.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/jquery.init.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/prepopulate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/prepopulate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/timeparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/urlify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/jquery/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/xregexp/xregexp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/ebdjango/css/blog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/ebdjango/js/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/static/ebdjango/resources/results.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/templates/ebdjango/coming_soon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/templates/ebdjango/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/templates/ebdjango/index2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/todolist/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/local/tutorial_eb.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local/db.sqlite3" afterPath="$PROJECT_DIR$/local/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ebextensions/.gitignore" afterPath="$PROJECT_DIR$/.ebextensions/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebdjango/views.py" afterPath="$PROJECT_DIR$/ebdjango/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local/.gitignore" afterPath="$PROJECT_DIR$/local/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local/manage.py" afterPath="$PROJECT_DIR$/local/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local/requirements.txt" afterPath="$PROJECT_DIR$/local/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ebdjango/coming_soon.html" afterPath="$PROJECT_DIR$/templates/ebdjango/coming_soon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ebdjango/index.html" afterPath="$PROJECT_DIR$/templates/ebdjango/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -112,8 +16,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ebdjango/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+            <state relative-caret-position="1666">
+              <caret line="98" column="1" lean-forward="false" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -123,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/templates/ebdjango/coming_soon.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+              <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -154,7 +58,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ebdjango/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
+            <state relative-caret-position="298">
               <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -168,49 +72,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local/ebdjango/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#224#233#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.ebextensions/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -312,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,16 +184,10 @@
               <item name="ebdjango" type="b2602c69:ProjectViewProjectNode" />
               <item name="ebdjango" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ebdjango" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ebdjango" type="462c0819:PsiDirectoryNode" />
-              <item name="ebdjango" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -530,25 +389,36 @@
   <component name="ToolWindowManager">
     <frame x="4542" y="511" width="2495" height="1418" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22829188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23318386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23160341" sideWeight="0.34896046" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290581" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23160341" sideWeight="0.65103954" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21533695" sideWeight="0.49857318" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18021625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24864446" sideWeight="0.49694252" order="10" side_tool="false" content_ui="tabs" x="4545" y="522" width="2495" height="427" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18645358" sideWeight="0.5014028" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.70333076" sideWeight="0.4997996" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21533695" sideWeight="0.49857318" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290581" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18021625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21533695" sideWeight="0.5014268" order="10" side_tool="false" content_ui="tabs" x="4545" y="522" width="2495" height="427" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22829188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18021625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -740,13 +610,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/ebdjango/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/local/ebdjango/settings.py" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -813,12 +677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="120" column="21" lean-forward="false" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
-          <folding>
-            <marker date="1560940934414" expanded="true" signature="54669:54686" ph="..." />
-            <marker date="1560940934414" expanded="true" signature="54669:54704" ph="..." />
-            <marker date="1560940934414" expanded="true" signature="54669:54717" ph="..." />
-            <marker date="1560940934414" expanded="true" signature="54669:54732" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
           <caret line="0" column="141345" lean-forward="false" selection-start-line="0" selection-start-column="141345" selection-end-line="0" selection-end-column="141345" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -859,14 +714,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ebdjango/coming_soon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -885,40 +739,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local/ebdjango/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/local/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/local/ebdjango/views.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ebdjango/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        <state relative-caret-position="1666">
+          <caret line="98" column="1" lean-forward="false" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -933,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ebdjango/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
+        <state relative-caret-position="298">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -945,7 +781,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#224#233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
