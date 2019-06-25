@@ -6,6 +6,8 @@ from django.template import loader, RequestContext
 
 from ebdjango.models import TVSetting
 
+from django.core import serializers
+
 
 def index(request):
     return HttpResponse("Welcome to sample django app"
@@ -58,12 +60,12 @@ def tvsettings(request):
 
 
 def dynamic_tvsettings(request):
-    tvSettingObject = TVSetting.objects.first()
-    return JsonResponse({'color': tvSettingObject.color,
-                         'size': tvSettingObject.size,
-                         'featuredApps': [1, 2, "youtube", 5.0],
-                         'publication_date': tvSettingObject.pub_date,
-                         'themeURL': tvSettingObject.themeURL})
+    some_queryset = TVSetting.objects.all()
+
+    serialized_queryset = serializers.serialize('python', some_queryset)
+    dict_to_show=dict(serialized_queryset[0]['fields'])
+    del dict_to_show['jsonPure']
+    return JsonResponse(dict_to_show)
 
 
 def static_tvsettings(request):
@@ -71,7 +73,6 @@ def static_tvsettings(request):
     data = json.loads(tvSettingObject.jsonPure)
     what_to_show = data if data else  {"nothing_to_show": "Check if tvSettingObject  has proper .jsonPure param "}
     return JsonResponse(what_to_show, safe=False)
-
 
 def get_cards(request):
     path_to_cards_file = './static/ebdjango/resources/results.txt'
