@@ -8,7 +8,16 @@ from ebdjango.models import TVSetting
 
 
 def index(request):
-    return HttpResponse("bababababaaba12334")
+    return HttpResponse("Welcome to sample django app"
+                        "<br>Please check the following:"
+                        "<br>"
+                        "<ul>"
+                            "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
+                            "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
+                            "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
+                            "<li><a href=\"admin/\">admin/</a></li>"
+                        "</ul>"
+                        )
 
     # Leave the rest of the views (detail, results, vote) unchanged
 
@@ -55,6 +64,11 @@ def dynamic_tvsettings(request):
                          'featuredApps': [1, 2, "youtube", 5.0],
                          'publication_date': tvSettingObject.pub_date,
                          'themeURL': tvSettingObject.themeURL})
+
+def static_tvsettings(request):
+    tvSettingObject = TVSetting.objects.first()
+    return JsonResponse(tvSettingObject.jsonPure)
+
 
 
 def get_cards(request):

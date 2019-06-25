@@ -1,10 +1,10 @@
 from django.db import models
+import jsonfield
 
 
 class TVSetting(models.Model):
     color = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()
-    themeURL= models.URLField()
-
-
+    themeURL = models.URLField()
+    jsonPure = jsonfield.JSONField()
