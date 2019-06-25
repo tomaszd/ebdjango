@@ -21,15 +21,27 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-djan
 
 how to start :
 
+##########################
+#aws:
+eb status  -status of eb
+eb appversion -> deployment history https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-appversion.html
+eb deploy
+eb open
+eb ssh
 
-cd ebdjango/ebdjango
-python manage.py runserver
-migrations->
+
+
+
+####################migrations->
 python manage.py makemigrations ebdjango
+python manage.py makemigrations ebdjango
+python manage.py migrate
 python manage.py collectstatic
+python manage.py runserver
 
 
-python manage.py shell
+
+#################python manage.py shell
 from ebdjango.models import TVSetting
 In [2]: TVSetting.objects.all()
 Out[2]: []

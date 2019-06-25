@@ -2,8 +2,11 @@ from django.db import models
 
 
 class TVSetting(models.Model):
-    color = models.CharField(max_length=200)
+    color = models.CharField(max_length=200, default='#0096a6', blank=True, null=True)
+    color_search = models.CharField(max_length=200, default='#ffaa3f', blank=True, null=True)
+    color_default_background = models.CharField(max_length=200, default='#0096a6', blank=True, null=True)
+    color_selected_background = models.CharField(max_length=200, default='#ffaa3f', blank=True, null=True)
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()
     themeURL = models.URLField()
-    jsonPure = models.CharField(max_length=2000,blank=True, null=True)
+    jsonPure = models.CharField(max_length=2000, blank=True, null=True)
