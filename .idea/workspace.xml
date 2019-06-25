@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea8408c2-8581-4d86-9f04-61dba78a1d03" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ebdjango/migrations/0007_tvsetting_color_text.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ebdjango/migrations/0008_auto_20190625_1302.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebdjango/models.py" afterPath="$PROJECT_DIR$/ebdjango/models.py" />
@@ -105,8 +105,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ebdjango/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="93" lean-forward="false" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -570,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561462827896</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added Text Color a s a field">
+      <created>1561466235881</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1561466235881</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -639,7 +646,8 @@
     <MESSAGE value="Add jsonField to configuration json" />
     <MESSAGE value="Add more color configurations" />
     <MESSAGE value="add dynamic serializer for dynamic setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dynamic serializer for dynamic setting" />
+    <MESSAGE value="added Text Color a s a field" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Text Color a s a field" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -939,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ebdjango/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="93" lean-forward="false" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
