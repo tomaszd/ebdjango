@@ -6,3 +6,4 @@ class TVSetting(models.Model):
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()
     themeURL = models.URLField()
+    jsonPure = models.CharField(max_length=2000,blank=True, null=True)

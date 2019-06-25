@@ -66,10 +66,11 @@ def dynamic_tvsettings(request):
                          'themeURL': tvSettingObject.themeURL})
 
 
-# def static_tvsettings(request):
-#    tvSettingObject = TVSetting.objects.first()
-#    return JsonResponse(tvSettingObject.jsonPure)
-
+def static_tvsettings(request):
+    tvSettingObject = TVSetting.objects.first()
+    data = json.loads(tvSettingObject.jsonPure)
+    what_to_show = data if data else  {"nothing_to_show": "Check if tvSettingObject  has proper .jsonPure param "}
+    return JsonResponse(what_to_show, safe=False)
 
 
 def get_cards(request):
