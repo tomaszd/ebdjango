@@ -12,10 +12,10 @@ def index(request):
                         "<br>Please check the following:"
                         "<br>"
                         "<ul>"
-                            "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
-                            "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
-                            "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
-                            "<li><a href=\"admin/\">admin/</a></li>"
+                        "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
+                        "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
+                        "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
+                        "<li><a href=\"admin/\">admin/</a></li>"
                         "</ul>"
                         )
 
@@ -65,9 +65,10 @@ def dynamic_tvsettings(request):
                          'publication_date': tvSettingObject.pub_date,
                          'themeURL': tvSettingObject.themeURL})
 
-def static_tvsettings(request):
-    tvSettingObject = TVSetting.objects.first()
-    return JsonResponse(tvSettingObject.jsonPure)
+
+# def static_tvsettings(request):
+#    tvSettingObject = TVSetting.objects.first()
+#    return JsonResponse(tvSettingObject.jsonPure)
 
 
 

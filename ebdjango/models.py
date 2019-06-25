@@ -1,5 +1,4 @@
 from django.db import models
-import jsonfield
 
 
 class TVSetting(models.Model):
@@ -7,4 +6,3 @@ class TVSetting(models.Model):
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()
     themeURL = models.URLField()
-    jsonPure = jsonfield.JSONField()

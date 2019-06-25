@@ -28,6 +28,6 @@ urlpatterns = [
                   url('^api/cards/$', views.get_cards, name='get_cards'),
                   url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
                   url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
-                  url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
+                  #url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
                   url(r'^admin/', admin.site.urls),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
