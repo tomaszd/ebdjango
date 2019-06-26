@@ -9,6 +9,10 @@ class TVSetting(models.Model):
     color_text = models.CharField(max_length=200, default='#FFFF00FF', blank=True, null=True)
     grid_width = models.CharField(max_length=200, default='2.0', blank=True, null=True)
     grid_height = models.CharField(max_length=200, default='1.5', blank=True, null=True)
+    card_width = models.CharField(max_length=200, default='1.0', blank=True, null=True)
+    card_height = models.CharField(max_length=200, default='1.0', blank=True, null=True)
+
+
 
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()

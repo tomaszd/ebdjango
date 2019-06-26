@@ -34,7 +34,6 @@ eb ssh
 
 ####################migrations->
 python manage.py makemigrations ebdjango
-python manage.py makemigrations ebdjango
 python manage.py migrate
 python manage.py collectstatic
 python manage.py runserver
