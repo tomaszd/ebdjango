@@ -15,8 +15,22 @@
 
 <h2><a>All Cards to sell</a></h2>
 
-{% for single_row in json_data %}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: : {{single_row.cena}}</li>
+{% for single_row in json_cards_with_price %}
+<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    {{single_row.cena}}
+</li>
+{% endfor %}
+
+
+<h1><a>TOTAL MONEY</a></h1>
+<li class="total">{{total_money}} EURO</li>
+<h2><a>Cards without price</a></h2>
+
+
+{% for single_row in cards_no_price %}
+<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    {{single_row.cena}}
+</li>
 {% endfor %}
 
 

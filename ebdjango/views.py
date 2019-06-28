@@ -59,11 +59,12 @@ def tvsettings(request):
                          'featuredApps': [1, 2, "youtube", 5.0],
                          'themeURL': 'https://www.istockphoto.com/pl/zdj%C4%99cie/golden-cebuli-na-drewnianym-tle-rustykalnym-gm480134211-36493838'})
 
+
 def dynamic_tvsettings(request):
     some_queryset = TVSetting.objects.all()
 
     serialized_queryset = serializers.serialize('python', some_queryset)
-    dict_to_show=dict(serialized_queryset[0]['fields'])
+    dict_to_show = dict(serialized_queryset[0]['fields'])
     del dict_to_show['jsonPure']
     return JsonResponse(dict_to_show)
 
@@ -73,6 +74,7 @@ def static_tvsettings(request):
     data = json.loads(tvSettingObject.jsonPure)
     what_to_show = data if data else  {"nothing_to_show": "Check if tvSettingObject  has proper .jsonPure param "}
     return JsonResponse(what_to_show, safe=False)
+
 
 def get_cards(request):
     path_to_cards_file = './static/ebdjango/resources/results.txt'
@@ -89,19 +91,33 @@ def get_cards(request):
 
     return JsonResponse(what_to_show, safe=False)
 
+
 def dynamic_get_cards(request):
     path_to_cards_file = './static/ebdjango/resources/results.txt'
     with open(path_to_cards_file) as json_file:
         json_data = json.load(json_file)
 
+    with_cena = []
+    without_cena = []
+    total_money = 0.0
+    for singlekarta in json_data:
+        if 'cena' in singlekarta:
+            singlekarta['cena'] = float(singlekarta['cena'].replace(",", "."))
 
+            if singlekarta['cena'] < 0.5:
+                singlekarta['cena'] = 0.5
 
+            with_cena.append(singlekarta)
+            total_money += singlekarta['cena'] * singlekarta['ilosc']
+        else:
+            singlekarta['cena'] = "NO PRICE YET!"
+            without_cena.append(singlekarta)
 
-
+    with_cena = sorted(with_cena, key=lambda k: k['cena'])[::-1]
     template = loader.get_template("ebdjango/all_cards.html")
     context = RequestContext(request, {
-        'json_data': json_data,
+        'json_cards_with_price': with_cena,
+        'cards_no_price': without_cena,
+        'total_money': total_money
     })
     return HttpResponse(template.render(context))
-
-
