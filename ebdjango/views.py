@@ -1,12 +1,11 @@
 # coding=utf-8
 import json
 
+from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.template import loader, RequestContext
 
 from ebdjango.models import TVSetting
-
-from django.core import serializers
 
 
 def index(request):
@@ -18,6 +17,7 @@ def index(request):
                         "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
                         "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
                         "<li><a href=\"admin/\">admin/</a></li>"
+                        "<li><a href=\"api/cards/\">api/cards/</a></li>"
                         "</ul>"
                         )
 
@@ -57,7 +57,6 @@ def tvsettings(request):
                          'theme': 'dark',
                          'featuredApps': [1, 2, "youtube", 5.0],
                          'themeURL': 'https://www.istockphoto.com/pl/zdj%C4%99cie/golden-cebuli-na-drewnianym-tle-rustykalnym-gm480134211-36493838'})
-
 
 def dynamic_tvsettings(request):
     some_queryset = TVSetting.objects.all()
