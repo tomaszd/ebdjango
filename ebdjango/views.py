@@ -117,6 +117,7 @@ def dynamic_get_cards(request):
     template = loader.get_template("ebdjango/all_cards.html")
     context = RequestContext(request, {
         'json_cards_with_price': with_cena,
+        #'json_cards_tojs': json.dumps(with_cena),
         'cards_no_price': without_cena,
         'total_money': total_money
     })
