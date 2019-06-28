@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/static/ebdjango/css/blog.css">
     <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
     <title>All cards</title>
-    <!--script src="/static/ebdjango/js/utils.js"></script-->
+    <script src="/static/ebdjango/js/utils.js"></script>
     <!--script>
     var myObj = JSON.parse('{{ json_cards_tojs }}')
     </script-->
@@ -36,6 +36,125 @@
 </li>
 {% endfor %}
 
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'White')">White</button>
+    <button class="tablinks" onclick="openCity(event, 'Green')">Green</button>
+    <button class="tablinks" onclick="openCity(event, 'Red')">Red</button>
+    <button class="tablinks" onclick="openCity(event, 'Black')">Black</button>
+    <button class="tablinks" onclick="openCity(event, 'Blue')">Blue</button>
+    <button class="tablinks" onclick="openCity(event, 'Artifact')">Artifact</button>
+    <button class="tablinks" onclick="openCity(event, 'Multicolor')">Multicolor</button>
+    <button class="tablinks" onclick="openCity(event, 'Lands')">Lands</button>
+    <button class="tablinks" onclick="openCity(event, 'Other')">Other</button>
+</div>
+
+<div id="White" class="tabcontent">
+    <h2>White</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "w" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+
+    {% endfor %}
+
+</div>
+
+<div id="Green" class="tabcontent">
+    <h2>Green</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "g" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+
+    {% endfor %}
+</div>
+<div id="Black" class="tabcontent">
+    <h2>Black</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "b" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+
+    {% endfor %}
+</div>
+<div id="Blue" class="tabcontent">
+    <h2>Blue</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "u" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+
+    {% endfor %}
+</div>
+<div id="Red" class="tabcontent">
+    <h2>Red</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "r" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+
+    {% endfor %}
+</div>
+<div id="Artifact" class="tabcontent">
+    <h2>Artifact</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "a" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+    {% endfor %}
+</div>
+<div id="Multicolor" class="tabcontent">
+    <h2>Multicolor</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "m" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+    {% endfor %}
+</div>
+<div id="Lands" class="tabcontent">
+    <h2>Lands</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "l" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+    {% endfor %}
+</div>
+<div id="Other" class="tabcontent">
+    <h2>Other</h2>
+    {% for single_row in json_cards_with_price %}
+
+    {% if "c" in single_row.kolor%}
+    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {%endif%}
+    {% endfor %}
+
+</div>
 
 
 </body>
