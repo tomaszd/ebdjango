@@ -8,3 +8,15 @@ h2  {
     color: #A25100;
     font-family: 'Impact';
 }
+
+
+.row1  {
+    color: #65776d;
+    font-family: 'Charcoal';
+    background-color:"gray"
+}
+
+.row2  {
+    color: #d08a74;
+    font-family: 'Charcoal';
+}

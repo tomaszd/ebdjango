@@ -18,6 +18,7 @@ def index(request):
                         "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
                         "<li><a href=\"admin/\">admin/</a></li>"
                         "<li><a href=\"api/cards/\">api/cards/</a></li>"
+                        "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
                         "</ul>"
                         )
 
@@ -87,3 +88,20 @@ def get_cards(request):
     # newlist = sorted(list_of_cards, key=lambda k: k['nazwa'])
 
     return JsonResponse(what_to_show, safe=False)
+
+def dynamic_get_cards(request):
+    path_to_cards_file = './static/ebdjango/resources/results.txt'
+    with open(path_to_cards_file) as json_file:
+        json_data = json.load(json_file)
+
+
+
+
+
+    template = loader.get_template("ebdjango/all_cards.html")
+    context = RequestContext(request, {
+        'json_data': json_data,
+    })
+    return HttpResponse(template.render(context))
+
+
