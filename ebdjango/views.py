@@ -15,11 +15,15 @@ def index(request):
     return HttpResponse("Welcome to sample django app"
                         "<br>Please check the following:"
                         "<br>"
+           
+                        "<br>TVSettings"
                         "<ul>"
                         "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
                         "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
                         "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
-                        "<li><a href=\"admin/\">admin/</a></li>"
+                        "</ul>"
+                        "<br>Cards"
+                        "<ul>"
                         "<li><a href=\"api/cards/\">api/cards/</a></li>"
                         "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
                         "</ul>"
@@ -28,7 +32,12 @@ def index(request):
                         "<li><a href=\"pingpong/players\">pingpong/players</a></li>"
                         "<li><a href=\"pingpong/results\">pingpong/results</a></li>"
                         "<li><a href=\"pingpong/results/new\">pingpong/results/new</a></li>"
-
+                        "<li><a href=\"pingpong/results/new\">pingpong/results/ID</a></li>"
+                        "</ul>"
+                        "<br>ADMIN"
+                        "<ul>"
+                        "<li><a href=\"admin/\">ADMIN/</a></li>"
+                        "</ul>"
                         )
 
     # Leave the rest of the views (detail, results, vote) unchanged
