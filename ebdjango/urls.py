@@ -35,6 +35,7 @@ urlpatterns = [
                   url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
                   url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),
                   url('pingpong/results/new', views.result_new, name='result_new'),
+                  url('pingpong/results/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
                   url(r'^admin/', admin.site.urls),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

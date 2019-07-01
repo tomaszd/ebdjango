@@ -4,7 +4,7 @@ import json
 from django.core import serializers
 from django.core.checks import messages
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader, RequestContext
 
 from ebdjango.forms import MatchResultForm
@@ -177,4 +177,17 @@ def result_new(request):
 
         form = MatchResultForm()
 
-    return render(request, 'ebdjango/post_edit.html', {'form': form})
+    return render(request, 'ebdjango/result_new.html', {'form': form})
+
+def result_edit(request, pk):
+    result = get_object_or_404(MatchResult, pk=pk)
+    if request.method == "POST":
+        form = MatchResultForm(request.POST, instance=result)
+        if form.is_valid():
+            result = form.save(commit=False)
+            result.author = request.user
+            result.save()
+            return redirect('pingpong_results')
+    else:
+        form = MatchResultForm(instance=result)
+    return render(request, 'ebdjango/result_edit.html', {'form': form})
