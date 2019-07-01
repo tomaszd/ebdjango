@@ -35,21 +35,22 @@ class MatchResult(models.Model):
     setWonPlayer2 = models.IntegerField(default=0)
     finished = models.BooleanField(default=False)
     tournament_name = models.CharField(max_length=200, default="No Tournament")
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __unicode__(self):
         return "{} vs {}: {}-{}.  {} {} .  WINNER: {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
-                                                              self.setWonPlayer2, self.tournament_name, self.pub_date.strftime('%Y-%m-%d-%H:%M'),
+                                                              self.setWonPlayer2, self.tournament_name,
+                                                              self.pub_date.strftime('%Y-%m-%d-%H:%M'),
                                                               self.get_winner())
 
     def __str__(self):
         return "{} vs {}: {}-{}.  {} {} .  WINNER: {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
-                                                              self.setWonPlayer2, self.tournament_name, self.pub_date.strftime('%Y-%m-%d-%H:%M'),
+                                                              self.setWonPlayer2, self.tournament_name,
+                                                              self.pub_date.strftime('%Y-%m-%d-%H:%M'),
                                                               self.get_winner())
 
     def get_simple_date(self):
         return self.pub_date
-
 
     def get_winner(self):
         if (self.setWonPlayer1 == self.setWonPlayer2):

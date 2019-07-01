@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<body background="https://st2.depositphotos.com/1888461/7666/i/950/depositphotos_76669773-stock-photo-white-grey-background-in-soft.jpg">
 <head>
     {% load staticfiles %}
     <meta charset="UTF-8">
@@ -14,24 +14,28 @@
     var myObj = JSON.parse('{{ json_cards_tojs }}')
     </script-->
 </head>
-
-
+<body>
+<h2><a href="{% url 'result_new'%}">Add New Result</a></h2>
 <h2><a>All results</a></h2>
 
 {% for single_result in match_results %}
 <li>
     {% if single_result.get_winner == single_result.player1%}
     <cos class="winner">{{single_result.player1}}</cos>
-    <cos> vs </cos>
+    <cos> vs</cos>
     <cos class="loser">{{single_result.player2}}</cos>
     {%else%}
     <cos class="loser">{{single_result.player1}}</cos>
-    <cos> vs </cos>
+    <cos> vs</cos>
     <cos class="winner">{{single_result.player2}}</cos>
     {%endif%}
-    <cos class="result">{{single_result.setWonPlayer1}}:{{single_result.setWonPlayer2}}</cos> {{single_result.pub_date}}
-    <b>WINNER:</b> <cos class="winner">{{single_result.get_winner}}</cos>
+    <cos class="result">{{single_result.setWonPlayer1}}:{{single_result.setWonPlayer2}}</cos>
+    {{single_result.pub_date}}
+    <b>WINNER:</b>
+    <cos class="winner">{{single_result.get_winner}}</cos>
 </li>
 {% endfor %}
+
+
 </body>
 </html>

@@ -2,9 +2,12 @@
 import json
 
 from django.core import serializers
+from django.core.checks import messages
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, redirect
 from django.template import loader, RequestContext
 
+from ebdjango.forms import MatchResultForm
 from ebdjango.models import TVSetting, Player, MatchResult
 
 
@@ -24,7 +27,7 @@ def index(request):
                         "<ul>"
                         "<li><a href=\"pingpong/players\">pingpong/players</a></li>"
                         "<li><a href=\"pingpong/results\">pingpong/results</a></li>"
-                        "</ul>"
+                        "<li><a href=\"pingpong/results/new\">pingpong/results/new</a></li>"
 
                         )
 
@@ -100,14 +103,13 @@ def pingpong_results_static(request):
     return HttpResponse(response
                         )
 
+
 def pingpong_results(request):
     template = loader.get_template("ebdjango/all_results.html")
     context = RequestContext(request, {
-        'match_results': MatchResult.objects.all() ,
+        'match_results': MatchResult.objects.all(),
     })
     return HttpResponse(template.render(context))
-
-
 
 
 def get_cards(request):
@@ -156,3 +158,23 @@ def dynamic_get_cards(request):
         'total_money': total_money
     })
     return HttpResponse(template.render(context))
+
+
+def result_new(request):
+    if request.method == "POST":
+        print "POST"
+        form = MatchResultForm(request.POST)
+        print "VALIDNOSC:", form.is_valid()
+        if form.is_valid():
+            result = form.save(commit=False)
+            result.author = request.user
+            result.save()
+            return redirect('pingpong_results')
+        else:
+            print "errors! form",form
+            return redirect('pingpong_results')
+    else:
+
+        form = MatchResultForm()
+
+    return render(request, 'ebdjango/post_edit.html', {'form': form})
