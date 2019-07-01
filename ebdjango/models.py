@@ -12,9 +12,49 @@ class TVSetting(models.Model):
     card_width = models.CharField(max_length=200, default='1.0', blank=True, null=True)
     card_height = models.CharField(max_length=200, default='1.0', blank=True, null=True)
 
-
-
     pub_date = models.DateTimeField('date published')
     size = models.IntegerField()
     themeURL = models.URLField()
     jsonPure = models.CharField(max_length=2000, blank=True, null=True)
+
+
+class Player(models.Model):
+    name = models.CharField(max_length=200, default='PlayerName', blank=True, null=True)
+
+    def __unicode__(self):
+        return "{}".format(self.name)
+
+    def __str__(self):
+        return "{}".format(self.name)
+
+
+class MatchResult(models.Model):
+    player1 = models.ForeignKey(Player, related_name="player1")
+    player2 = models.ForeignKey(Player, related_name="player2")
+    setWonPlayer1 = models.IntegerField(default=0)
+    setWonPlayer2 = models.IntegerField(default=0)
+    finished = models.BooleanField(default=False)
+    tournament_name = models.CharField(max_length=200, default="No Tournament")
+    pub_date = models.DateTimeField('date published')
+
+    def __unicode__(self):
+        return "{} vs {}: {}-{}.  {} {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
+                                                self.setWonPlayer2, self.tournament_name, self.pub_date)
+
+    def __str__(self):
+        return "{} vs {}: {}-{}.  {} {} .  WINNER: {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
+                                                              self.setWonPlayer2, self.tournament_name, self.pub_date.strftime('%Y-%m-%d-%H:%M'),
+                                                              self.get_winner())
+
+    def get_simple_date(self):
+        return self.pub_date
+
+
+    def get_winner(self):
+        if (self.setWonPlayer1 == self.setWonPlayer2):
+            return "DRAW"
+        if self.setWonPlayer1 > self.setWonPlayer2:
+            return self.player1
+        else:
+            return self.player2
+        return "No winner"

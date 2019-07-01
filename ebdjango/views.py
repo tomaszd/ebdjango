@@ -5,7 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.template import loader, RequestContext
 
-from ebdjango.models import TVSetting
+from ebdjango.models import TVSetting, Player, MatchResult
 
 
 def index(request):
@@ -20,6 +20,12 @@ def index(request):
                         "<li><a href=\"api/cards/\">api/cards/</a></li>"
                         "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
                         "</ul>"
+                        "<br>PING PONG!"
+                        "<ul>"
+                        "<li><a href=\"pingpong/players\">pingpong/players</a></li>"
+                        "<li><a href=\"pingpong/results\">pingpong/results</a></li>"
+                        "</ul>"
+
                         )
 
     # Leave the rest of the views (detail, results, vote) unchanged
@@ -76,6 +82,26 @@ def static_tvsettings(request):
     return JsonResponse(what_to_show, safe=False)
 
 
+def pingpong_players(request):
+    response = "Here are the list of Players:"
+    response += "<ul>"
+    for player in Player.objects.all():
+        response += "<li>" + str(player) + "</li>"
+    response += "</ul>"
+    return HttpResponse(response
+                        )
+
+
+def pingpong_results(request):
+    response = "Here are the list of Match Results:"
+    response += "<ul>"
+    for result in MatchResult.objects.all():
+        response += "<li>" + str(result) + "</li>"
+    response += "</ul>"
+    return HttpResponse(response
+                        )
+
+
 def get_cards(request):
     path_to_cards_file = './static/ebdjango/resources/results.txt'
 
@@ -117,7 +143,7 @@ def dynamic_get_cards(request):
     template = loader.get_template("ebdjango/all_cards.html")
     context = RequestContext(request, {
         'json_cards_with_price': with_cena,
-        #'json_cards_tojs': json.dumps(with_cena),
+        # 'json_cards_tojs': json.dumps(with_cena),
         'cards_no_price': without_cena,
         'total_money': total_money
     })

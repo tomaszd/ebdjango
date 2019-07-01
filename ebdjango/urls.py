@@ -30,5 +30,7 @@ urlpatterns = [
                   url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
                   url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
                   url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
+                  url('^pingpong/players/$', views.pingpong_players, name='pingpong_players'),
+                  url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
                   url(r'^admin/', admin.site.urls),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
