@@ -32,5 +32,6 @@ urlpatterns = [
                   url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
                   url('^pingpong/players/$', views.pingpong_players, name='pingpong_players'),
                   url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
+                  url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),
                   url(r'^admin/', admin.site.urls),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

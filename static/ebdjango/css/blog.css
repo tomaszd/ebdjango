@@ -9,6 +9,21 @@ h2  {
     font-family: 'Impact';
 }
 
+.winner {
+  color:green;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.loser {
+ color:red;
+}
+
+
+.result {
+ font-weight: bold;
+
+}
 
 .row1  {
     color: #65776d;
@@ -63,3 +78,5 @@ h2  {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+

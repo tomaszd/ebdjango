@@ -38,8 +38,9 @@ class MatchResult(models.Model):
     pub_date = models.DateTimeField('date published')
 
     def __unicode__(self):
-        return "{} vs {}: {}-{}.  {} {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
-                                                self.setWonPlayer2, self.tournament_name, self.pub_date)
+        return "{} vs {}: {}-{}.  {} {} .  WINNER: {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,
+                                                              self.setWonPlayer2, self.tournament_name, self.pub_date.strftime('%Y-%m-%d-%H:%M'),
+                                                              self.get_winner())
 
     def __str__(self):
         return "{} vs {}: {}-{}.  {} {} .  WINNER: {}".format(self.player1.name, self.player2.name, self.setWonPlayer1,

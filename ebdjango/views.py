@@ -68,7 +68,6 @@ def tvsettings(request):
 
 def dynamic_tvsettings(request):
     some_queryset = TVSetting.objects.all()
-
     serialized_queryset = serializers.serialize('python', some_queryset)
     dict_to_show = dict(serialized_queryset[0]['fields'])
     del dict_to_show['jsonPure']
@@ -92,7 +91,7 @@ def pingpong_players(request):
                         )
 
 
-def pingpong_results(request):
+def pingpong_results_static(request):
     response = "Here are the list of Match Results:"
     response += "<ul>"
     for result in MatchResult.objects.all():
@@ -100,6 +99,15 @@ def pingpong_results(request):
     response += "</ul>"
     return HttpResponse(response
                         )
+
+def pingpong_results(request):
+    template = loader.get_template("ebdjango/all_results.html")
+    context = RequestContext(request, {
+        'match_results': MatchResult.objects.all() ,
+    })
+    return HttpResponse(template.render(context))
+
+
 
 
 def get_cards(request):
