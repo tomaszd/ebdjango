@@ -41,6 +41,9 @@ python manage.py runserver
 
 
 #################python manage.py shell
+
+>>> import django
+>>> django.setup()
 from ebdjango.models import TVSetting
 In [2]: TVSetting.objects.all()
 Out[2]: []

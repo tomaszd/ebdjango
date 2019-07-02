@@ -2,20 +2,22 @@
 import json
 
 from django.core import serializers
-from django.core.checks import messages
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader, RequestContext
+from rest_framework import viewsets
 
 from ebdjango.forms import MatchResultForm
 from ebdjango.models import TVSetting, Player, MatchResult
+from ebdjango.serializers import PlayerSerializer
+from .serializers import MatchResultSerializer
 
 
 def index(request):
     return HttpResponse("Welcome to sample django app"
                         "<br>Please check the following:"
                         "<br>"
-           
+
                         "<br>TVSettings"
                         "<ul>"
                         "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
@@ -180,13 +182,14 @@ def result_new(request):
             result.save()
             return redirect('pingpong_results')
         else:
-            print "errors! form",form
+            print "errors! form", form
             return redirect('pingpong_results')
     else:
 
         form = MatchResultForm()
 
     return render(request, 'ebdjango/result_new.html', {'form': form})
+
 
 def result_edit(request, pk):
     result = get_object_or_404(MatchResult, pk=pk)
@@ -200,3 +203,27 @@ def result_edit(request, pk):
     else:
         form = MatchResultForm(instance=result)
     return render(request, 'ebdjango/result_edit.html', {'form': form})
+
+
+def results_list(request):
+    if request.method == 'GET':
+        match_results = MatchResult.objects.all()
+        serializer = MatchResultSerializer(match_results, many=True)
+        print serializer.data
+        return JsonResponse(serializer.data, safe=False)
+
+
+class MatchResultViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = MatchResult.objects.all()
+    serializer_class = MatchResultSerializer
+
+
+class PlayerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Player.objects.all()
+    serializer_class = PlayerSerializer

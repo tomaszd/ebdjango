@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -25,8 +24,7 @@ SECRET_KEY = '5t-0aj)smxwlr8)l1#z_)i1%%r6-!*wlvndwv7x=)_1g1-uum('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-env.grtw6epeki.eu-west-3.elasticbeanstalk.com","127.0.0.1"]
-
+ALLOWED_HOSTS = ["django-env.grtw6epeki.eu-west-3.elasticbeanstalk.com", "127.0.0.1"]
 
 # Application definition
 
@@ -37,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ebdjango'
+    'rest_framework',
+    'ebdjango',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,3 +121,12 @@ STATIC_ROOT = "/home/tomaszd/Github/ebDjango"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
