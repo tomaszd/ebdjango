@@ -123,7 +123,8 @@ if __name__ == "__main__":
             price,
             total,
             karta['nazwa'])
-        print "Processed : " + str(iteration) + " / " + str(len_my_cards) + " , " + str(iteration * 100 / len_my_cards) + " %"
+        print "Processed : " + str(iteration) + " / " + str(len_my_cards) + " , " + str(
+            iteration * 100 / len_my_cards) + " %"
         """
         
     except:
@@ -133,7 +134,7 @@ if __name__ == "__main__":
     """
 
     timestamp = datetime.datetime.now().strftime("%Y_%B")
-    result_path = "~/Results"
+    result_path = "/home/" + os.getlogin() + "/Results/"
     if not os.path.exists(result_path):
         print "There is no path {} . Creating it".format(result_path)
         os.mkdir(result_path)
@@ -154,4 +155,4 @@ if __name__ == "__main__":
                            'total' + timestamp + '.txt'), 'w') as detail_outfile:
         json.dump(total, detail_outfile)
     print "Finito!!!!! It takes : ", time.time() - start_time, " seconnds "
-    print "results visible in result_path: ",result_path
+    print "results visible in result_path: ", result_path
