@@ -173,16 +173,13 @@ def dynamic_get_cards(request):
 
 def result_new(request):
     if request.method == "POST":
-        print "POST"
         form = MatchResultForm(request.POST)
-        print "VALIDNOSC:", form.is_valid()
         if form.is_valid():
             result = form.save(commit=False)
             result.author = request.user
             result.save()
             return redirect('pingpong_results')
         else:
-            print "errors! form", form
             return redirect('pingpong_results')
     else:
 
