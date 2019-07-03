@@ -7,6 +7,24 @@ from BeautifulSoup import BeautifulSoup
 import requests
 
 
+def get_details_from_single_card(soup, full_url):
+    try:
+        expansion_set = str(soup).split("Expansions/")[1].split("\"")[0]
+    except:
+        expansion_set = "brak Expansion Set!"
+        # PRICE
+    try:
+        price = soup.findAll("td", text="Price Trend")[0].next.text.split(" &")[0] + " EURO"
+    except:
+        price = "dziwaczna"
+
+    card_details = {
+        "href": full_url,
+        "expansion_set": expansion_set,
+        "price": price}
+    return [card_details]
+
+
 def get_singles_details_MCM(cardname=None):
     url = "https://www.cardmarket.com/en/Magic/Products/Search?searchString="
     if not cardname:
@@ -22,7 +40,10 @@ def get_singles_details_MCM(cardname=None):
         print "Problems for {}".format(full_url)
         return []
     list_of_cards = []
-    base_url = "https://www.magiccardmarket.eu"
+
+    if "Price Trend" in str(soup):
+        print "Only one Card expansion"
+        return get_details_from_single_card(soup, full_url)
 
     rows_with_products = [row for row in soup.findAll("div", {"class": "row no-gutters"}) if row.has_key("id")]
     row_with_actual_cards = []
@@ -68,7 +89,7 @@ def get_singles_details_MCM(cardname=None):
             "price": price}
 
         list_of_cards.append(card_details)
-        return list_of_cards  # dead code below:
+    return list_of_cards  # dead code below:
 
 
 """
@@ -199,7 +220,8 @@ def get_price_and_set_MagicCardMarket(cardname):
 
 
 if __name__ == "__main__":
-    print get_price_and_set_MagicCardMarket("tarmogoyf")
+    print get_price_and_set_MagicCardMarket("Puresteel Paladin")
+    print get_price_and_set_MagicCardMarket("Tarmogoyf")
     # print get_price_and_set_MagicCardMarket("doran, the siege tower")
     # print get_price_and_set_MagicCardMarket("flooded strand")
     # print get_price_and_set_MagicCardMarket("Chill")
