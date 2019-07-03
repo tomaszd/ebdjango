@@ -73,9 +73,9 @@ def getTCGPlayerPrices(cardName, cardSet=None):
 if __name__ == "__main__":
     start_time = time.time()
     print 'Example Test'
-    input_file = 'tescik.xlsx'
+    #input_file = 'tescik.xlsx'
 
-    # input_file = 'Luty2016.xlsx'
+    input_file = 'Luty2016.xlsx'
     my_cards = convert_xlsx2dict(input_file)
     errors = []
     total = 0
