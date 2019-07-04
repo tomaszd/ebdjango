@@ -147,11 +147,7 @@ def get_the_most_recent_result():
          if os.path.isfile(os.path.join(result_dir, s)) and "result" in s]
     a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
     print "result",a
-    return a[-1]
-
-
-
-
+    return os.path.join(result_dir, a[-1])
 
 
 def dynamic_get_cards(request):
