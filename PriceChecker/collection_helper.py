@@ -136,7 +136,7 @@ if __name__ == "__main__":
       # karta['cenaTCG']=getTCGPlayerPrices(karta['nazwa'])
     """
 
-    timestamp = datetime.datetime.now().strftime("%Y_%B")
+    timestamp = datetime.datetime.now().strftime("%Y_%m_%d")
     result_path = "/home/" + os.getlogin() + "/Results/"
     if not os.path.exists(result_path):
         print "There is no path {} . Creating it".format(result_path)
@@ -149,13 +149,13 @@ if __name__ == "__main__":
         os.mkdir(detailed_result_path)
 
     with open(os.path.join(detailed_result_path,
-                           'result' + timestamp + '.txt'), 'w') as outfile:
+                           'result_' + timestamp + '.txt'), 'w') as outfile:
         json.dump(my_cards, outfile)
     with open(os.path.join(detailed_result_path,
-                           'errors' + timestamp + '.txt'), 'w') as error_outfile:
+                           'errors_' + timestamp + '.txt'), 'w') as error_outfile:
         json.dump(errors, error_outfile)
     with open(os.path.join(detailed_result_path,
-                           'total' + timestamp + '.txt'), 'w') as detail_outfile:
+                           'total_' + timestamp + '.txt'), 'w') as detail_outfile:
         json.dump(total, detail_outfile)
-    print "Finito!!!!! It takes : ", time.time() - start_time, " seconnds "
+    print "Finito!!!!! It takes : ", time.time() - start_time, " seconds "
     print "results visible in result_path: ", result_path
