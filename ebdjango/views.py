@@ -125,7 +125,7 @@ def pingpong_results(request):
 
 
 def get_cards(request):
-    path_to_cards_file = './static/ebdjango/resources/result__s.txt'
+    path_to_cards_file = './static/ebdjango/resources/res__ults.txt'
 
     with open(path_to_cards_file) as json_file:
         data = json.load(json_file)
@@ -154,7 +154,7 @@ def dynamic_get_cards(request):
     path_to_cards_file=get_the_most_recent_result()
 
 
-    #path_to_cards_file = './static/ebdjango/resources/result__s.txt'
+    #path_to_cards_file = './static/ebdjango/resources/res__ults.txt'
     with open(path_to_cards_file) as json_file:
         json_data = json.load(json_file)
 
