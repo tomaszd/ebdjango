@@ -73,7 +73,7 @@ def getTCGPlayerPrices(cardName, cardSet=None):
 if __name__ == "__main__":
     start_time = time.time()
     print 'Example Test'
-    #input_file = 'tescik.xlsx'
+    # input_file = 'tescik.xlsx'
 
     input_file = 'Luty2016.xlsx'
     my_cards = convert_xlsx2dict(input_file)
@@ -98,7 +98,8 @@ if __name__ == "__main__":
                 if card_details['price'] == "strange":
                     price = card_details['price_trend'].replace(" EURO", "")
                 else:
-                    price = card_details['price']
+                    price = card_details['price_trend'].replace(" EURO", "")
+
                 karta['cena'] = price
                 karta['expansion_set'] = card_details['expansion_set']
                 karta['href'] = card_details["href"]
@@ -117,8 +118,9 @@ if __name__ == "__main__":
                 errors.append(karta)
 
         lazy_loading_dict[karta['nazwa']] = price
-        total += karta['ilosc'] * float(
-            price.replace('$', '').replace(",", "."))
+        if card_details['price'] != "strange":
+            total += karta['ilosc'] * float(
+                price.replace('$', '').replace(",", "."))
         print " after adding {} {} - worth total in EURO :  {} -> added {}".format(
             karta['ilosc'],
             price,
