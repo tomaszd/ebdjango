@@ -55,8 +55,10 @@ urlpatterns += [
                    url('^dupa/$', views.index2, name='index2'),
                    url('^example/$', views.example, name='example'),
                    url('^coming_soon/$', views.coming_soon, name='coming_soon'),
+                   ####################
                    url('^api/cards/$', views.get_cards, name='get_cards'),
                    url('^api/dynamic/cards/$', views.dynamic_get_cards, name='dynamic_get_cards'),
+                   url('^api/resources/$', views.get_resources, name='get_resources'),
                    url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
                    url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
                    url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
@@ -64,9 +66,9 @@ urlpatterns += [
                    url('^pingpong/players/$', views.pingpong_players, name='pingpong_players'),
                    url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
                    url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),
-                   url('pingpong/results/new', views.result_new, name='result_new'),
-                   url('pingpong/results/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
-                   url('api/results_list$', views.results_list, name='results_list'),
+                   url('^pingpong/results/new', views.result_new, name='result_new'),
+                   url('^pingpong/results/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
+                   url('^api/results_list$', views.results_list, name='results_list'),
 
                    url(r'^admin/', admin.site.urls),
 

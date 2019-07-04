@@ -27,8 +27,9 @@ def index(request):
                         "</ul>"
                         "<br>Cards"
                         "<ul>"
-                        "<li><a href=\"api/cards/\">api/cards/</a></li>"
+                        #"<li><a href=\"api/cards/\">api/cards/</a></li>"
                         "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
+                        "<li><a href=\"api/resources/\">api/resources/</a></li>"    
                         "</ul>"
                         "<br>PING PONG!"
                         "<ul>"
@@ -141,20 +142,19 @@ def get_cards(request):
 
 
 def get_the_most_recent_result():
-    result_dir="./static/ebdjango/resources/"
+    result_dir = "./static/ebdjango/resources/"
 
     a = [s for s in os.listdir(result_dir)
          if os.path.isfile(os.path.join(result_dir, s)) and "result" in s]
     a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
-    print "result",a
+    print "result", a
     return os.path.join(result_dir, a[-1])
 
 
 def dynamic_get_cards(request):
-    path_to_cards_file=get_the_most_recent_result()
+    path_to_cards_file = get_the_most_recent_result()
 
-
-    #path_to_cards_file = './static/ebdjango/resources/res__ults.txt'
+    # path_to_cards_file = './static/ebdjango/resources/res__ults.txt'
     with open(path_to_cards_file) as json_file:
         json_data = json.load(json_file)
 
@@ -183,6 +183,24 @@ def dynamic_get_cards(request):
         'total_money': total_money
     })
     return HttpResponse(template.render(context))
+
+
+def get_resources(request):
+    result_dir = "./static/ebdjango/resources/"
+
+    a = [s for s in os.listdir(result_dir)
+         if os.path.isfile(os.path.join(result_dir, s))]
+    a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
+    html_content = ""
+
+    for resource_path in a:
+        html_content += "<li>" + resource_path + "</li>"
+    print html_content
+    return HttpResponse("Our_Resources files:"
+                        "<ul>"
+                        + html_content +
+                        "</ul>"
+                        )
 
 
 def result_new(request):
