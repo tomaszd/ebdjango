@@ -40,6 +40,11 @@ python manage.py runserver
 
 
 
+to download cards: scp -r -i /home/tomaszd/.ssh/aws-eb ec2-user@35.181.7.123:/home/ec2-user/Results/Results_2019_July/* .
+eb ssh
+crontab -e
+see when the scripts will do the stuff
+
 #################python manage.py shell
 
 >>> import django

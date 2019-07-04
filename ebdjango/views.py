@@ -1,6 +1,7 @@
 # coding=utf-8
 import json
 
+import os
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -139,8 +140,25 @@ def get_cards(request):
     return JsonResponse(what_to_show, safe=False)
 
 
+def get_the_most_recent_result():
+    result_dir="./static/ebdjango/resources/"
+
+    a = [s for s in os.listdir(result_dir)
+         if os.path.isfile(os.path.join(result_dir, s)) and "result" in s]
+    a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
+    print "result",a
+    return a[-1]
+
+
+
+
+
+
 def dynamic_get_cards(request):
-    path_to_cards_file = './static/ebdjango/resources/results.txt'
+    path_to_cards_file=get_the_most_recent_result()
+
+
+    #path_to_cards_file = './static/ebdjango/resources/results.txt'
     with open(path_to_cards_file) as json_file:
         json_data = json.load(json_file)
 
