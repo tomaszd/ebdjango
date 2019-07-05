@@ -188,26 +188,24 @@ def dynamic_get_cards(request):
 def get_resources_files_path(request):
     result_dir = "./static/ebdjango/resources/"
     result_dir_on_server = "/tmp/Results/"
-    a = []
+    reources_from_git = []
     if os.path.isdir(result_dir):
-        a = [s for s in os.listdir(result_dir)
+        reources_from_git = [s for s in os.listdir(result_dir)
              if os.path.isfile(os.path.join(result_dir, s))]
 
-        a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
-        a = [result_dir + " :"] + a
-    b=["There is no path : "+result_dir_on_server]
+        reources_from_git.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
+        reources_from_git = [result_dir + " :"] + reources_from_git
+    resources_from_server = ["There is no path : " + result_dir_on_server]
     if os.path.isdir(result_dir_on_server):
-        b = [s for s in os.listdir(result_dir_on_server)
+        resources_from_server = [s for s in os.listdir(result_dir_on_server)
              if os.path.isfile(os.path.join(result_dir_on_server, s))]
-        b.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
-        b = [result_dir_on_server + " :"] + b
-
-    html_content = "User :"+str(os.listdir(result_dir_on_server))
-
-    for resource_path in a:
+        resources_from_server.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
+        resources_from_server = [result_dir_on_server + " :"] + resources_from_server
+    html_content = ""
+    for resource_path in reources_from_git:
         html_content += "<li>" + resource_path + "</li>"
 
-    for resource_path in b:
+    for resource_path in resources_from_server:
         html_content += "<li>" + resource_path + "</li>"
 
     print html_content
