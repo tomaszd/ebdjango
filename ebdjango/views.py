@@ -187,7 +187,7 @@ def dynamic_get_cards(request):
 
 def get_resources_files_path(request):
     result_dir = "./static/ebdjango/resources/"
-    result_dir_on_server = "/home/ec2-user/Results/"
+    result_dir_on_server = "/tmp/Results/"
     a = []
     if os.path.isdir(result_dir):
         a = [s for s in os.listdir(result_dir)
@@ -202,7 +202,7 @@ def get_resources_files_path(request):
         b.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
         b = [result_dir_on_server + " :"] + b
 
-    html_content = "User :"+str(os.listdir("/home/ec2-user/Results/"))
+    html_content = "User :"+str(os.listdir(result_dir_on_server))
 
     for resource_path in a:
         html_content += "<li>" + resource_path + "</li>"
