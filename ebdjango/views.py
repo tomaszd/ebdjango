@@ -195,7 +195,7 @@ def get_resources_files_path(request):
 
         a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
         a = [result_dir + " :"] + a
-    b="There is no path : ",result_dir_on_server
+    b=["There is no path : "+result_dir_on_server]
     if os.path.isdir(result_dir_on_server):
         b = [s for s in os.listdir(result_dir_on_server)
              if os.path.isfile(os.path.join(result_dir_on_server, s))]
@@ -204,8 +204,12 @@ def get_resources_files_path(request):
 
     html_content = ""
 
-    for resource_path in a + b:
+    for resource_path in a:
         html_content += "<li>" + resource_path + "</li>"
+
+    for resource_path in b:
+        html_content += "<li>" + resource_path + "</li>"
+
     print html_content
     return HttpResponse("Our_Resources files:"
                         "<ul>"
