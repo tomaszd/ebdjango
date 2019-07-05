@@ -189,13 +189,13 @@ def get_resources_files_path(request):
     result_dir = "./static/ebdjango/resources/"
     result_dir_on_server = "/home/ec2-user/Results/"
     a = []
-    b = []
     if os.path.isdir(result_dir):
         a = [s for s in os.listdir(result_dir)
              if os.path.isfile(os.path.join(result_dir, s))]
 
         a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
         a = [result_dir + " :"] + a
+    b="There is no path : ",result_dir_on_server
     if os.path.isdir(result_dir_on_server):
         b = [s for s in os.listdir(result_dir_on_server)
              if os.path.isfile(os.path.join(result_dir_on_server, s))]
