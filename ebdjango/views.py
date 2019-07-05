@@ -27,9 +27,9 @@ def index(request):
                         "</ul>"
                         "<br>Cards"
                         "<ul>"
-                        #"<li><a href=\"api/cards/\">api/cards/</a></li>"
+                        # "<li><a href=\"api/cards/\">api/cards/</a></li>"
                         "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
-                        "<li><a href=\"api/resources/\">api/resources/</a></li>"    
+                        "<li><a href=\"api/resources/\">api/resources/</a></li>"
                         "</ul>"
                         "<br>PING PONG!"
                         "<ul>"
@@ -185,15 +185,26 @@ def dynamic_get_cards(request):
     return HttpResponse(template.render(context))
 
 
-def get_resources(request):
+def get_resources_files_path(request):
     result_dir = "./static/ebdjango/resources/"
+    result_dir_on_server = "/home/ec2-user/Results/"
+    a = []
+    b = []
+    if os.path.isdir(result_dir):
+        a = [s for s in os.listdir(result_dir)
+             if os.path.isfile(os.path.join(result_dir, s))]
 
-    a = [s for s in os.listdir(result_dir)
-         if os.path.isfile(os.path.join(result_dir, s))]
-    a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
+        a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
+        a = [result_dir + " :"] + a
+    if os.path.isdir(result_dir_on_server):
+        b = [s for s in os.listdir(result_dir_on_server)
+             if os.path.isfile(os.path.join(result_dir_on_server, s))]
+        b.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
+        b = [result_dir_on_server + " :"] + b
+
     html_content = ""
 
-    for resource_path in a:
+    for resource_path in a + b:
         html_content += "<li>" + resource_path + "</li>"
     print html_content
     return HttpResponse("Our_Resources files:"

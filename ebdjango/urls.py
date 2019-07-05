@@ -58,7 +58,7 @@ urlpatterns += [
                    ####################
                    url('^api/cards/$', views.get_cards, name='get_cards'),
                    url('^api/dynamic/cards/$', views.dynamic_get_cards, name='dynamic_get_cards'),
-                   url('^api/resources/$', views.get_resources, name='get_resources'),
+                   url('^api/resources/$', views.get_resources_files_path, name='get_resources'),
                    url('^api/tvsettings/$', views.tvsettings, name='tvsettings'),
                    url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
                    url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),

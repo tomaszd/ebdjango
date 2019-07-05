@@ -142,19 +142,18 @@ if __name__ == "__main__":
         print "There is no path {} . Creating it".format(result_path)
         os.mkdir(result_path)
 
-    detailed_result_path = os.path.join(result_path,
-                                        "Results_" + str(timestamp))
-    if not os.path.exists(detailed_result_path):
-        print "There is no path {} . Creating it".format(detailed_result_path)
-        os.mkdir(detailed_result_path)
 
-    with open(os.path.join(detailed_result_path,
+    if not os.path.exists(result_path):
+        print "There is no path {} . Creating it".format(result_path)
+        os.mkdir(result_path)
+
+    with open(os.path.join(result_path,
                            'result_' + timestamp + '.txt'), 'w') as outfile:
         json.dump(my_cards, outfile)
-    with open(os.path.join(detailed_result_path,
+    with open(os.path.join(result_path,
                            'errors_' + timestamp + '.txt'), 'w') as error_outfile:
         json.dump(errors, error_outfile)
-    with open(os.path.join(detailed_result_path,
+    with open(os.path.join(result_path,
                            'total_' + timestamp + '.txt'), 'w') as detail_outfile:
         json.dump(total, detail_outfile)
     print "Finito!!!!! It takes : ", time.time() - start_time, " seconds "
