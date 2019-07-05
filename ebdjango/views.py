@@ -202,7 +202,7 @@ def get_resources_files_path(request):
         b.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
         b = [result_dir_on_server + " :"] + b
 
-    html_content = ""
+    html_content = "User :"+os.getlogin()
 
     for resource_path in a:
         html_content += "<li>" + resource_path + "</li>"
