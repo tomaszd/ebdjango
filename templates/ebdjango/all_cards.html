@@ -10,17 +10,34 @@
     <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
     <title>All cards</title>
     <script src="/static/ebdjango/js/utils.js"></script>
+
     <!--script>
     var myObj = JSON.parse('{{ json_cards_tojs }}')
     </script-->
 </head>
+<body>
+<script src="/static/ebdjango/js/wz_tooltip.js"></script>
+<script src="/static/ebdjango/js/show_card.js"></script>
+<!--a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Spawn of Mayhem" target="_blank"
+   onmouseover="TagToTip('Spawn%20of%20Mayhem4367129',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+   onmouseout="UnTip()">Spawn of Mayhem</a>
+
+<span id="Spawn%20of%20Mayhem4367129" style="visibility: hidden; position: absolute; display: none;"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name=Spawn%20of%20Mayhem"></span-->
 
 
 <h2><a>All Cards to sell</a></h2>
 
+
+
 {% for single_row in json_cards_with_price %}
-<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} returnPopUpLinks("delta") ilosc {{single_row.ilosc}} price in EURO: :
     {{single_row.cena}}
+    <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name="+{{single_row.nazwa}} target="_blank"
+    onmouseover="TagToTip('"+{{single_row.nazwa}}+"4367129",FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+    onmouseout="UnTip()">{{single_row.nazwa}}</a>
+
+    <span id="{{single_row.nazwa}}+4367129" style="visibility: hidden; position: absolute; display: none;"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name=Spawn%20of%20Mayhem"></span>
+
 </li>
 {% endfor %}
 

@@ -1,0 +1,2 @@
+#put this into "crontab -e" on server
+1 * * * *      cp -r ~/Results /tmp/

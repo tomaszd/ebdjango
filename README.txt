@@ -45,6 +45,15 @@ eb ssh
 crontab -e
 see when the scripts will do the stuff
 
+
+#
+source /opt/python/run/venv/bin/activate
+mkdir -p ~/LOGS
+mkdir -p ~/Results
+cd /opt/python/current/app/ebdjango/..//PriceChecker/
+touch ~/LOGS/logi.txt
+python collection_helper.py > ~/LOGS/logi.txt
+
 #################python manage.py shell
 
 >>> import django
