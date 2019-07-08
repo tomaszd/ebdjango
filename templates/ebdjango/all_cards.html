@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% load staticfiles %}
     <meta charset="UTF-8">
@@ -10,7 +9,6 @@
     <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
     <title>All cards</title>
     <script src="/static/ebdjango/js/utils.js"></script>
-
     <!--script>
     var myObj = JSON.parse('{{ json_cards_tojs }}')
     </script-->
@@ -21,33 +19,21 @@
 
 <h2><a>All Cards to sell</a></h2>
 
-
-
 {% for single_row in json_cards_with_price %}
 <li class="{% cycle 'row1' 'row2' %}">
-    <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa}}" target="_blank"
-    onmouseover="TagToTip('{{single_row.nazwa}}4367129',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
-    onmouseout="UnTip()">{{single_row.nazwa}}</a>
-    <span id="{{single_row.nazwa}}4367129" style="visibility: hidden; position: absolute; display: none;"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa}}"></span>
-     ilosc {{single_row.ilosc}} price in EURO: :
+    <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+       onmouseover="TagToTip('{{single_row.nazwa|safe}}4367129',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+       onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+    <span id="{{single_row.nazwa|safe}}4367129" style="visibility: hidden; position: absolute; display: none;"><img
+            src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+    ilosc {{single_row.ilosc}} price in EURO: :
     {{single_row.cena}}
 
-</li>
-{% endfor %}
-
-
-<h1><a>TOTAL MONEY</a></h1>
-<li class="total">{{total_money}} EURO</li>
-<h2><a>Cards without price</a></h2>
-
-
-{% for single_row in cards_no_price %}
-<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
-    {{single_row.cena}}
 </li>
 {% endfor %}
 
 <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'All')">All</button>
     <button class="tablinks" onclick="openCity(event, 'White')">White</button>
     <button class="tablinks" onclick="openCity(event, 'Green')">Green</button>
     <button class="tablinks" onclick="openCity(event, 'Red')">Red</button>
@@ -59,12 +45,35 @@
     <button class="tablinks" onclick="openCity(event, 'Other')">Other</button>
 </div>
 
+<div id="All" class="tabcontent">
+    <h2>All</h2>
+    {% for single_row in json_cards_with_price %}
+    <li class="{% cycle 'row1' 'row2' %}">
+        <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+           onmouseover="TagToTip('{{single_row.nazwa|safe}}4367121',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+           onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367121" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
+        {{single_row.cena}}
+    </li>
+    {% endfor %}
+
+</div>
+
+
 <div id="White" class="tabcontent">
     <h2>White</h2>
     {% for single_row in json_cards_with_price %}
 
     {% if "w" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}">
+        <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+           onmouseover="TagToTip('{{single_row.nazwa|safe}}436712',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+           onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}436712" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -78,7 +87,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "g" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}">
+        <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+           onmouseover="TagToTip('{{single_row.nazwa|safe}}4367128',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+           onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367128" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -90,7 +105,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "b" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}">
+        <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+           onmouseover="TagToTip('{{single_row.nazwa|safe}}4367122',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+           onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367122" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -102,7 +123,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "u" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367120',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367120" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -114,7 +141,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "r" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367123',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367123" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -126,7 +159,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "a" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367124',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367124" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -137,7 +176,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "m" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367125',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367125" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -148,7 +193,13 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "l" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367126',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367126" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
@@ -159,14 +210,30 @@
     {% for single_row in json_cards_with_price %}
 
     {% if "c" in single_row.kolor%}
-    <li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa}} ilosc {{single_row.ilosc}} price in EURO: :
+    <li class="{% cycle 'row1' 'row2' %}"><a
+            href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name={{single_row.nazwa|safe}}" target="_blank"
+            onmouseover="TagToTip('{{single_row.nazwa|safe}}4367127',FADEIN, 400, FADEOUT, 400, BGCOLOR, '#000000', FONTCOLOR, '#ffffff', BORDERCOLOR, '#000000')"
+            onmouseout="UnTip()">{{single_row.nazwa|safe}}</a>
+        <span id="{{single_row.nazwa|safe}}4367127" style="visibility: hidden; position: absolute; display: none;"><img
+                src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&amp;name={{single_row.nazwa|safe}}"></span>
+        ilosc {{single_row.ilosc}} price in EURO: :
         {{single_row.cena}}
     </li>
     {%endif%}
     {% endfor %}
-
 </div>
 
+<h1><a>TOTAL MONEY</a></h1>
+<li class="total">{{total_money}} EURO</li>
+<h2><a>Cards without price</a></h2>
 
+
+{% for single_row in cards_no_price %}
+<li class="{% cycle 'row1' 'row2' %}">{{single_row.nazwa|safe}} ilosc {{single_row.ilosc}} price in EURO: :
+    {{single_row.cena}}
+</li>
+{% endfor %}
+<h3>Results taken from : {{path_to_cards_file}}</h3>
 </body>
+
 </html>
