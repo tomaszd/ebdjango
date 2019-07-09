@@ -16,39 +16,9 @@ from .serializers import MatchResultSerializer
 
 
 def index(request):
-    return HttpResponse("Welcome to sample django app"
-                        "<br>Please check the following:"
-                        "<br>"
-
-                        "<br>TVSettings"
-                        "<ul>"
-                        "<li><a href=\"api/tvsettings/\">api/tvsettings/</a></li>"
-                        "<li><a href=\"api/dynamic/tvsettings/\">api/dynamic/tvsettings/</a></li>"
-                        "<li><a href=\"api/static/tvsettings/\">api/static/tvsettings/</a></li>"
-                        "</ul>"
-                        "<br>Cards"
-                        "<ul>"
-                        # "<li><a href=\"api/cards/\">api/cards/</a></li>"
-                        "<li><a href=\"api/dynamic/cards/\">api/dynamic/cards/</a></li>"
-                        "<li><a href=\"api/resources/\">api/resources/</a></li>"
-                        "</ul>"
-                        "<br>PING PONG!"
-                        "<ul>"
-                        "<li><a href=\"pingpong/players\">pingpong/players</a></li>"
-                        "<li><a href=\"pingpong/results\">pingpong/results</a></li>"
-                        "<li><a href=\"pingpong/results/new\">pingpong/results/new</a></li>"
-                        "<li><a href=\"pingpong/results/new\">pingpong/results/ID</a></li>"
-                        "</ul>"
-                        "<br>Snooker"
-                        "<ul>"
-                        "<li><a href=\"snooker/results/\">snooker/results/</a></li>"
-                        "<li><a href=\"snooker/results/new\">snooker/results//new</a></li>"
-                        "</ul>"
-                        "<br>ADMIN"
-                        "<ul>"
-                        "<li><a href=\"admin/\">ADMIN/</a></li>"
-                        "</ul>"
-                        )
+    template = loader.get_template("ebdjango/index.html")
+    context = RequestContext(request)
+    return HttpResponse(template.render(context))
 
     # Leave the rest of the views (detail, results, vote) unchanged
 

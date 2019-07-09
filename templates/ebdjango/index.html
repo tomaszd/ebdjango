@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% load staticfiles %}
     <meta charset="UTF-8">
@@ -8,20 +7,44 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/static/ebdjango/css/blog.css">
     <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
-    <title>{{title}}</title>
+    <title>All cards</title>
     <script src="/static/ebdjango/js/utils.js"></script>
+
 </head>
+<html>
+<body background="https://www.lifeofpix.com/wp-content/uploads/2018/05/cc0web3-1600x1059.jpg">
+<h4>Please check the following:</h4>
 
-<h1><a>Title : {{title}}</a></h1>
-<h2><a>Collection Counter</a></h2>
+<h3>TVSettings</h3>
+<ul>
+    <li><a href=api/tvsettings/>api/tvsettings/</a></li>
+    <li><a href=api/dynamic/tvsettings/>api/dynamic/tvsettings/</a></li>
+    <li><a href=api/static/tvsettings/>api/static/tvsettings/</a></li>
+</ul>
+<h3>Cards</h3>
+<ul>
+    <li><a href=api/cards/>api/cards/</a></li>
+    <li><a href=api/dynamic/cards/>api/dynamic/cards/</a></li>
+    <li><a href=api/resources/>api/resources/</a></li>
+</ul>
 
-<p id="demo">A Paragraph.</p>
+<h3>PING PONG!"</h3>
 
-<button type="button" onclick="myFunctionCount()">Count collection</button>
-</br>
-</br>
-<button type="button" onclick="myFunctionStopCount()">Stop Counting</button>
+<ul>
+    <li><a href=pingpong/players>pingpong/players</a></li>
+    <li><a href=pingpong/results>pingpong/results</a></li>
+    <li><a href=pingpong/results/new>pingpong/results/new</a></li>
+    <li><a href=pingpong/results/new>pingpong/results/ID</a></li>
+</ul>
 
+<h3>Snooker</h3>
 
+<ul>
+    <li><a href=snooker/results/>snooker/results/</a></li>
+</ul>
+<h3>ADMIN</h3>
+<ul>
+    <li><a href=admin/>ADMIN/</a></li>
+</ul>
 </body>
 </html>
