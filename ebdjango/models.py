@@ -35,6 +35,11 @@ class MatchResult(models.Model):
     setWonPlayer2 = models.IntegerField(default=0)
     finished = models.BooleanField(default=False)
     tournament_name = models.CharField(max_length=200, default="No Tournament")
+    PING_PONG = 'Ping Pong'
+    SNOOKER = 'Snooker'
+    GAME_TYPE = [(PING_PONG, "Ping Pong"),
+                 (SNOOKER, "Snooker")]
+    game_type = models.CharField(max_length=200, choices=GAME_TYPE, default=PING_PONG)
     pub_date = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __unicode__(self):

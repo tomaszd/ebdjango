@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader, RequestContext
 from rest_framework import viewsets
 
+from ebdjango import models
 from ebdjango.forms import MatchResultForm
 from ebdjango.models import TVSetting, Player, MatchResult
 from ebdjango.serializers import PlayerSerializer
@@ -37,6 +38,11 @@ def index(request):
                         "<li><a href=\"pingpong/results\">pingpong/results</a></li>"
                         "<li><a href=\"pingpong/results/new\">pingpong/results/new</a></li>"
                         "<li><a href=\"pingpong/results/new\">pingpong/results/ID</a></li>"
+                        "</ul>"
+                        "<br>Snooker"
+                        "<ul>"
+                        "<li><a href=\"snooker/results/\">snooker/results/</a></li>"
+                        "<li><a href=\"snooker/results/new\">snooker/results//new</a></li>"
                         "</ul>"
                         "<br>ADMIN"
                         "<ul>"
@@ -120,7 +126,15 @@ def pingpong_results_static(request):
 def pingpong_results(request):
     template = loader.get_template("ebdjango/all_results.html")
     context = RequestContext(request, {
-        'match_results': MatchResult.objects.all(),
+        'match_results': MatchResult.objects.filter(game_type=models.MatchResult.PING_PONG)
+    })
+    return HttpResponse(template.render(context))
+
+
+def snooker_results(request):
+    template = loader.get_template("ebdjango/snooker_results.html")
+    context = RequestContext(request, {
+        'match_results': MatchResult.objects.filter(game_type=models.MatchResult.SNOOKER),
     })
     return HttpResponse(template.render(context))
 
@@ -181,7 +195,7 @@ def dynamic_get_cards(request):
         # 'json_cards_tojs': json.dumps(with_cena),
         'cards_no_price': without_cena,
         'total_money': total_money,
-        'path_to_cards_file':path_to_cards_file
+        'path_to_cards_file': path_to_cards_file
     })
     return HttpResponse(template.render(context))
 
@@ -192,14 +206,14 @@ def get_resources_files_path(request):
     reources_from_git = []
     if os.path.isdir(result_dir):
         reources_from_git = [s for s in os.listdir(result_dir)
-             if os.path.isfile(os.path.join(result_dir, s))]
+                             if os.path.isfile(os.path.join(result_dir, s))]
 
         reources_from_git.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
         reources_from_git = [result_dir + " :"] + reources_from_git
     resources_from_server = ["There is no path : " + result_dir_on_server]
     if os.path.isdir(result_dir_on_server):
         resources_from_server = [s for s in os.listdir(result_dir_on_server)
-             if os.path.isfile(os.path.join(result_dir_on_server, s))]
+                                 if os.path.isfile(os.path.join(result_dir_on_server, s))]
         resources_from_server.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir_on_server, s)))
         resources_from_server = [result_dir_on_server + " :"] + resources_from_server
     html_content = ""

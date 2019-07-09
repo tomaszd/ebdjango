@@ -68,6 +68,10 @@ urlpatterns += [
                    url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),
                    url('^pingpong/results/new', views.result_new, name='result_new'),
                    url('^pingpong/results/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
+                   # snooker
+                   url('^snooker/results/$', views.snooker_results, name='snooker_results'),
+
+
                    url('^api/results_list$', views.results_list, name='results_list'),
 
                    url(r'^admin/', admin.site.urls),
