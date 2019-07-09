@@ -2,7 +2,6 @@ window.onload = function() {
     console.log("welcome to new result");
     id_game_type = document.getElementById("id_game_type");
     var body = document.getElementsByTagName('body')[0];
-
     function listQ() {
         console.log("wcisniete id_game_type " + id_game_type.value)
         if (id_game_type.value == "Ping Pong") {
