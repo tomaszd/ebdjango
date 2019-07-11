@@ -131,7 +131,6 @@ def get_the_most_recent_result():
     a = [s for s in os.listdir(result_dir)
          if os.path.isfile(os.path.join(result_dir, s)) and "result" in s]
     a.sort(key=lambda s: os.path.getmtime(os.path.join(result_dir, s)))
-    print "result", a
     return os.path.join(result_dir, a[-1])
 
 
@@ -193,7 +192,6 @@ def get_resources_files_path(request):
     for resource_path in resources_from_server:
         html_content += "<li>" + resource_path + "</li>"
 
-    print html_content
     return HttpResponse("Our_Resources files:"
                         "<ul>"
                         + html_content +
@@ -243,7 +241,6 @@ def results_list(request):
     if request.method == 'GET':
         match_results = MatchResult.objects.all()
         serializer = MatchResultSerializer(match_results, many=True)
-        print serializer.data
         return JsonResponse(serializer.data, safe=False)
 
 

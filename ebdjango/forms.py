@@ -7,8 +7,6 @@ class MatchResultForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(MatchResultForm, self).__init__(*args, **kwargs)
-        print "args", args
-        print "kwargs",kwargs
 
     class Meta:
         model = MatchResult
