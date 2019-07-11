@@ -228,12 +228,12 @@ def result_edit(request, pk):
             result.save()
             return redirect('pingpong_results')
     else:
+        if 'finished' in request.GET and request.GET['finished']=='true':
+            result.finished = True
+
         form = MatchResultForm(instance=result)
-    finished = False
-    print "request !!", request.GET
-    if 'finished' in request.GET:
-        finished = request.GET['finished']
-    return render(request, 'ebdjango/result_edit.html', {'form': form,'finished':finished})
+
+    return render(request, 'ebdjango/result_edit.html', {'form': form})
 
 
 def results_list(request):
