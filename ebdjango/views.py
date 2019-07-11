@@ -229,7 +229,11 @@ def result_edit(request, pk):
             return redirect('pingpong_results')
     else:
         form = MatchResultForm(instance=result)
-    return render(request, 'ebdjango/result_edit.html', {'form': form})
+    finished = False
+    print "request !!", request.GET
+    if 'finished' in request.GET:
+        finished = request.GET['finished']
+    return render(request, 'ebdjango/result_edit.html', {'form': form,'finished':finished})
 
 
 def results_list(request):
@@ -239,14 +243,12 @@ def results_list(request):
         print serializer.data
         return JsonResponse(serializer.data, safe=False)
 
-
 class MatchResultViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
     queryset = MatchResult.objects.all()
     serializer_class = MatchResultSerializer
-
 
 class PlayerViewSet(viewsets.ModelViewSet):
     """

@@ -20,37 +20,46 @@
 <h2><a href="{% url 'snooker_results'%}">All results Snooker</a></h2>
 
 {% for single_result in match_results %}
- {% if single_result.finished %}
-    <li>
+{% if single_result.finished %}
+<li>
+    {% if single_result.get_winner == single_result.player1%}
+    <cos class="winner">{{single_result.player1}}</cos>
+    <cos> vs</cos>
+    <cos class="loser">{{single_result.player2}}</cos>
+    {%else%}
+    <cos class="loser">{{single_result.player1}}</cos>
+    <cos> vs</cos>
+    <cos class="winner">{{single_result.player2}}</cos>
+    {%endif%}
+    <cos class="result">{{single_result.setWonPlayer1}}:{{single_result.setWonPlayer2}}</cos>
+    {{single_result.pub_date}}
+    <b>WINNER:</b>
+    <cos class="winner">{{single_result.get_winner}}</cos>
+    <button type="button" class="btn btn-success"
+            onclick="window.location.href = '{% url 'result_detail' pk=single_result.pk %}'">
+        <span class="glyphicon glyphicon-pencil"></span>
+        Edit Result
+    </button>
 
-        {% if single_result.get_winner == single_result.player1%}
-            <cos class="winner">{{single_result.player1}}</cos>
-            <cos> vs</cos>
-            <cos class="loser">{{single_result.player2}}</cos>
-        {%else%}
-            <cos class="loser">{{single_result.player1}}</cos>
-            <cos> vs</cos>
-            <cos class="winner">{{single_result.player2}}</cos>
-        {%endif%}
-        <cos class="result">{{single_result.setWonPlayer1}}:{{single_result.setWonPlayer2}}</cos>
-        {{single_result.pub_date}}
-        <b>WINNER:</b>
-        <cos class="winner">{{single_result.get_winner}}</cos>
-
-    </li>
+</li>
 {%endif%}
 {% endfor %}
 <h2><a href="{% url 'snooker_results'%}">Upcoming Events:</a></h2>
 {% for single_result in match_results %}
-    {% if not single_result.finished %}
-    <li>
-        <cos class="draw">{{single_result.player1}}</cos>
-        <cos> vs</cos>
-        <cos class="draw">{{single_result.player2}}</cos>
-        <b>UPCOMING</b>
-        <button type="button"  class="btn btn-secondary">Send Result</button>
-    </li>
-    {%endif%}
+{% if not single_result.finished %}
+<li>
+    <cos class="draw">{{single_result.player1}}</cos>
+    <cos> vs</cos>
+    <cos class="draw">{{single_result.player2}}</cos>
+    <b>UPCOMING</b>
+    <button type="button" class="btn btn-info"
+            onclick="window.location.href = '{% url 'result_detail' pk=single_result.pk %}?finished=true'">
+        <span class="glyphicon glyphicon-plus"></span>
+        Send Result
+    </button>
+
+</li>
+{%endif%}
 {% endfor %}
 
 
