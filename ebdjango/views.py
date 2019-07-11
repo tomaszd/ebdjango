@@ -212,9 +212,12 @@ def result_new(request):
         else:
             return redirect('pingpong_results')
     else:
-
-        form = MatchResultForm()
-
+        initial_dict = {}
+        if 'game_type' in request.GET and request.GET['game_type'] == 'Snooker':
+            initial_dict['game_type'] = MatchResult.SNOOKER
+        if 'finished' in request.GET and request.GET['finished'] == 'true':
+            initial_dict['finished'] = True
+        form = MatchResultForm(initial=initial_dict)
     return render(request, 'ebdjango/result_new.html', {'form': form})
 
 
@@ -228,7 +231,7 @@ def result_edit(request, pk):
             result.save()
             return redirect('pingpong_results')
     else:
-        if 'finished' in request.GET and request.GET['finished']=='true':
+        if 'finished' in request.GET and request.GET['finished'] == 'true':
             result.finished = True
 
         form = MatchResultForm(instance=result)
@@ -243,12 +246,14 @@ def results_list(request):
         print serializer.data
         return JsonResponse(serializer.data, safe=False)
 
+
 class MatchResultViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
     queryset = MatchResult.objects.all()
     serializer_class = MatchResultSerializer
+
 
 class PlayerViewSet(viewsets.ModelViewSet):
     """

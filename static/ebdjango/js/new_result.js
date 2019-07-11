@@ -12,4 +12,5 @@ window.onload = function() {
         }
     }
     id_game_type.onchange = listQ;
+    listQ();
 }

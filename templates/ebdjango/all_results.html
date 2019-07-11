@@ -15,7 +15,7 @@
     </script-->
 </head>
 <body background="/static/ebdjango/img/zlote_gacie3.png">
-<h2><a href="{% url 'result_new'%}">Add New Result</a></h2>
+<h2><a href="{% url 'result_new'%}?finished=true">Add New Result</a></h2>
 <h2><a href="{% url 'pingpong_results'%}">All results Ping Pong</a></h2>
 <h2><a href="{% url 'snooker_results'%}">All results Snooker</a></h2>
 
@@ -61,6 +61,7 @@
 </li>
 {%endif%}
 {% endfor %}
+<h2><a href="{% url 'result_new'%}?game_type=Ping Pong'">Add New Upcoming Event</a></h2>
 
 
 
