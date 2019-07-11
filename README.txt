@@ -63,3 +63,7 @@ In [2]: TVSetting.objects.all()
 Out[2]: []
 
 
+###########################DATABASE############################3
+python manage.py dumpdata --indent 4  >db.json
+python manage.py loaddata db.json
+
