@@ -64,11 +64,13 @@ urlpatterns += [
                    url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
                    # PING PONG!!!!!!!!!
                    url('^pingpong/players/$', views.pingpong_players, name='pingpong_players'),
+                   url('^players/(?P<pk>\d+)/matchresults$', views.player_results, name='player_results'),
                    url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
                    url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),
                    url('^pingpong/results/new', views.result_new, name='result_new'),
                    # matchresult!!!!!!!!!
                    url('^matchresult/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
+                   url('^players/(?P<pk>\d+)/matchresults$', views.result_edit, name='result_detail'),
                    # snooker
                    url('^snooker/results/$', views.snooker_results, name='snooker_results'),
                    url('^api/results_list$', views.results_list, name='results_list'),

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/ebdjango/css/blog.css">
+    <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
+    <title>Player {{player}} Results</title>
+    <script src="/static/ebdjango/js/utils.js"></script>
+    <!--script>
+    var myObj = JSON.parse('{{ json_cards_tojs }}')
+    </script-->
+</head>
+<body background="https://vignette.wikia.nocookie.net/heroes-and-villians/images/f/f7/06.06.2013_A_True_Hero_OMS.jpg/revision/latest?cb=20181004051240">
+
+<h2><a href="{% url 'pingpong_players'%}">See all players</a></h2>
+<h2>Player: {{player}}</h2>
+{% for single_result in results %}
+<li>
+  {% if single_result.get_winner == single_result.player1%}
+    <cos class="winner">{{single_result.player1}}</cos>
+    <cos> vs</cos>
+    <cos class="loser">{{single_result.player2}}</cos>
+    {%else%}
+    <cos class="loser">{{single_result.player1}}</cos>
+    <cos> vs</cos>
+    <cos class="winner">{{single_result.player2}}</cos>
+    {%endif%}
+    <cos class="result">{{single_result.setWonPlayer1}}:{{single_result.setWonPlayer2}}</cos>
+    {{single_result.pub_date}}
+    <b>WINNER:</b>
+    <cos class="winner">{{single_result.get_winner}}</cos>
+    <<b>game type: </b>>
+    {{single_result.game_type}}
+</li>
+{% endfor %}
+
+</body>
+</html>

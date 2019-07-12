@@ -50,7 +50,7 @@ see when the scripts will do the stuff
 source /opt/python/run/venv/bin/activate
 mkdir -p ~/LOGS
 mkdir -p ~/Results
-cd /opt/python/current/app/ebdjango/..//PriceChecker/
+cd /opt/python/current/app/ebdjango/../PriceChecker/
 touch ~/LOGS/logi.txt
 python collection_helper.py > ~/LOGS/logi.txt
 
@@ -64,7 +64,8 @@ Out[2]: []
 
 
 ###########################DATABASE############################3
-
+source /opt/python/run/venv/bin/activate
+cd /opt/python/current/app
 python manage.py dumpdata --indent 4  ~>db.json
 python manage.py loaddata ~/db.json
 

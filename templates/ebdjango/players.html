@@ -8,23 +8,26 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/static/ebdjango/css/blog.css">
     <link rel="shortcut icon" href="/static/ebdjango/img/favicon.ico"/>
+    <title>All Results</title>
     <script src="/static/ebdjango/js/utils.js"></script>
-    <script src="/static/ebdjango/js/new_result.js"></script>
     <!--script>
     var myObj = JSON.parse('{{ json_cards_tojs }}')
     </script-->
 </head>
-https://www.capegazette.com/sites/capegazette/files/2019/04/field/image/CoDel1.jpg
-<body background="https://previews.123rf.com/images/279photo/279photo1701/279photo170104800/70346037-red-racket-for-ping-pong-ball-wooden-background-top-view.jpg">
-<div class="page-header">
-</div>
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-        </div>
-    </div>
-</div>
+
+<body background="https://www.capegazette.com/sites/capegazette/files/2019/04/field/image/CoDel1.jpg">
+
+
+{% for single_player in players %}
+<li>
+    <a>{{single_player}}</a>
+      <button type="button" class="btn btn-success"
+           onclick="window.location.href = '{% url 'player_results' pk=single_player.pk %}'">
+       <span class="glyphicon glyphicon-signal"></span>
+       See Player Results
+    </button>
+</li>
+{% endfor %}
+
 </body>
 </html>

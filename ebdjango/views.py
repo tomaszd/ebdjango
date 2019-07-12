@@ -74,13 +74,19 @@ def static_tvsettings(request):
 
 
 def pingpong_players(request):
-    response = "Here are the list of Players:"
-    response += "<ul>"
-    for player in Player.objects.all():
-        response += "<li>" + str(player) + "</li>"
-    response += "</ul>"
-    return HttpResponse(response
-                        )
+    template = loader.get_template("ebdjango/players.html")
+    context = RequestContext(request, {
+        'players': Player.objects.all()
+    })
+    return HttpResponse(template.render(context))
+
+
+def player_results(request, pk):
+    player = get_object_or_404(Player, pk=pk)
+    results = player.player1.all() | player.player2.all()
+
+    return render(request, 'ebdjango/player_result.html', {'player': player,
+                                                           'results': results})
 
 
 def pingpong_results_static(request):
