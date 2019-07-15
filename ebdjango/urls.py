@@ -70,7 +70,6 @@ urlpatterns += [
                    url('^pingpong/results/new', views.result_new, name='result_new'),
                    # matchresult!!!!!!!!!
                    url('^matchresult/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
-                   url('^players/(?P<pk>\d+)/matchresults$', views.result_edit, name='result_detail'),
                    # snooker
                    url('^snooker/results/$', views.snooker_results, name='snooker_results'),
                    url('^api/results_list$', views.results_list, name='results_list'),
