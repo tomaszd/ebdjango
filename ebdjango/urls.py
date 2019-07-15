@@ -63,7 +63,7 @@ urlpatterns += [
                    url('^api/dynamic/tvsettings/$', views.dynamic_tvsettings, name='dynamic_tvsettings'),
                    url('^api/static/tvsettings/$', views.static_tvsettings, name='static_tvsettings'),
                    # PING PONG!!!!!!!!!
-                   url('^pingpong/players/$', views.pingpong_players, name='pingpong_players'),
+                   url('^players/$', views.players, name='players'),
                    url('^players/(?P<pk>\d+)/matchresults$', views.player_results, name='player_results'),
                    url('^pingpong/results/$', views.pingpong_results, name='pingpong_results'),
                    url('^pingpong/results/static$', views.pingpong_results_static, name='pingpong_results_static'),

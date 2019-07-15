@@ -73,7 +73,7 @@ def static_tvsettings(request):
     return JsonResponse(what_to_show, safe=False)
 
 
-def pingpong_players(request):
+def players(request):
     template = loader.get_template("ebdjango/players.html")
     context = RequestContext(request, {
         'players': Player.objects.all()
