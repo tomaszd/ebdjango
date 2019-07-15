@@ -18,6 +18,7 @@
 <h2><a href="{% url 'result_new'%}?finished=true">Add New Result</a></h2>
 <h2><a href="{% url 'pingpong_results'%}">All results Ping Pong</a></h2>
 <h2><a href="{% url 'snooker_results'%}">All results Snooker</a></h2>
+<h2><a href="{% url 'pingpong_players'%}">See Player List</a></h2>
 
 {% for single_result in match_results %}
 {% if single_result.finished %}
