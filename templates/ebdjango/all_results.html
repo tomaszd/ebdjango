@@ -51,7 +51,18 @@
         <cos class="loser">{{single_result.setWonPlayer2}}</cos>
     </td>
     <td>
-        <cos class="winner">{{single_result.get_winner}}</cos>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <h2>winner is ...</h2>
+                </div>
+                <div class="flip-box-back">
+                    <h2>{{single_result.get_winner}}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!--cos class="winner">{{single_result.get_winner}}</cos-->
     </td>
     <td>
         <button type="button" class="btn btn-success"
@@ -78,7 +89,17 @@
         <cos class="winner">{{single_result.setWonPlayer2}}</cos>
     </td>
     <td>
-        <cos class="winner">{{single_result.get_winner}}</cos>
+
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <h2>winner is ...</h2>
+                </div>
+                <div class="flip-box-back">
+                    <h2>{{single_result.get_winner}}</h2>
+                </div>
+            </div>
+        </div>
     </td>
     <td>
         <button type="button" class="btn btn-success"
@@ -109,22 +130,22 @@
     <tbody>
     {% for single_result in match_results %}
     {% if not single_result.finished %}
- <tr>
-    <td>
-        <cos class="draw">{{single_result.player1}}</cos>
-    </td>
-    <td>
-        <cos class="draw">{{single_result.player2}}</cos>
-    </td>
-    <td>
-        <button type="button" class="btn btn-info"
-                onclick="window.location.href = '{% url 'result_detail' pk=single_result.pk %}'">
-            <span class="glyphicon glyphicon-plus"></span>
-            Send Result
-        </button>
-    </td>
+    <tr>
+        <td>
+            <cos class="draw">{{single_result.player1}}</cos>
+        </td>
+        <td>
+            <cos class="draw">{{single_result.player2}}</cos>
+        </td>
+        <td>
+            <button type="button" class="btn btn-info"
+                    onclick="window.location.href = '{% url 'result_detail' pk=single_result.pk %}'">
+                <span class="glyphicon glyphicon-plus"></span>
+                Send Result
+            </button>
+        </td>
 
- </tr>
+    </tr>
     {%endif%}
     {% endfor %}
 
