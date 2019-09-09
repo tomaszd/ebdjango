@@ -29,8 +29,8 @@ class Player(models.Model):
 
 
 class MatchResult(models.Model):
-    player1 = models.ForeignKey(Player, related_name="player1")
-    player2 = models.ForeignKey(Player, related_name="player2")
+    player1 = models.ForeignKey(Player, related_name="player1",on_delete=models.CASCADE)
+    player2 = models.ForeignKey(Player, related_name="player2",on_delete=models.CASCADE)
     setWonPlayer1 = models.IntegerField(default=0)
     setWonPlayer2 = models.IntegerField(default=0)
     finished = models.BooleanField(default=False)

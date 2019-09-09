@@ -6,7 +6,7 @@ from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader, RequestContext
-from rest_framework import viewsets
+#from rest_framework import viewsets
 
 from ebdjango import models
 from ebdjango.forms import MatchResultForm
@@ -18,7 +18,7 @@ from .serializers import MatchResultSerializer
 def index(request):
     template = loader.get_template("ebdjango/index.html")
     context = RequestContext(request)
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
     # Leave the rest of the views (detail, results, vote) unchanged
 
@@ -29,7 +29,7 @@ def index2(request):
     context = RequestContext(request, {
         'title': title_string,
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def example(request):
@@ -38,7 +38,7 @@ def example(request):
     context = RequestContext(request, {
         'title': title_string,
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def coming_soon(request):
@@ -47,7 +47,7 @@ def coming_soon(request):
     context = RequestContext(request, {
         'title': title_string,
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def tvsettings(request):
@@ -78,7 +78,7 @@ def players(request):
     context = RequestContext(request, {
         'players': Player.objects.all()
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def player_results(request, pk):
@@ -104,7 +104,7 @@ def pingpong_results(request):
     context = RequestContext(request, {
         'match_results': MatchResult.objects.filter(game_type=models.MatchResult.PING_PONG)
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def snooker_results(request):
@@ -112,7 +112,7 @@ def snooker_results(request):
     context = RequestContext(request, {
         'match_results': MatchResult.objects.filter(game_type=models.MatchResult.SNOOKER),
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def get_cards(request):
@@ -172,7 +172,7 @@ def dynamic_get_cards(request):
         'total_money': total_money,
         'path_to_cards_file': path_to_cards_file
     })
-    return HttpResponse(template.render(context))
+    return HttpResponse(template.render(context.flatten()))
 
 
 def get_resources_files_path(request):
@@ -250,17 +250,3 @@ def results_list(request):
         return JsonResponse(serializer.data, safe=False)
 
 
-class MatchResultViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = MatchResult.objects.all()
-    serializer_class = MatchResultSerializer
-
-
-class PlayerViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Player.objects.all()
-    serializer_class = PlayerSerializer

@@ -69,3 +69,5 @@ cd /opt/python/current/app
 python manage.py dumpdata --indent 4  ~>db.json
 python manage.py loaddata ~/db.json
 
+
+pip3 requirements + venv ->  ebdjango/bin/venv3/bin/activate
