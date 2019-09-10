@@ -71,3 +71,5 @@ python manage.py loaddata ~/db.json
 
 
 pip3 requirements + venv ->  ebdjango/bin/venv3/bin/activate
+django2.0:
+source ./bin/venv3/bin/activate
