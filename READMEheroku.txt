@@ -13,3 +13,5 @@ important file
 /home/tomaszd/PROJECTS/ebdjango/Procfile
 #########################3
 fierce-bastion-18522.herokuapp.com/
+##################################
+heroku apps:rename tomaszd
