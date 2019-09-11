@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <title>Classic Pool Game</title>
+    <link rel="stylesheet" type="text/css" href="css/game-layout.css"/>
+    <link rel="shortcut icon" type="image/png" href="assets/sprites/favicon.png"/>
+    <script src="/static/ebdjango/script/lib/LAB.min.js"></script>
+    <script>
+        $LAB
+                .script('/static/ebdjango/script/system/Keys.js').wait()
+                .script('/static/ebdjango/script/system/Color.js').wait()
+                .script('/static/ebdjango/script/geom/Vector2.js').wait()
+                .script('/static/ebdjango/script/input/ButtonState.js').wait()
+                .script('/static/ebdjango/script/input/Keyboard.js').wait()
+                .script('/static/ebdjango/script/input/Mouse.js').wait()
+                .script('/static/ebdjango/script/Global.js').wait()
+                .script('/static/ebdjango/script/Canvas2D.js').wait()
+                .script('/static/ebdjango/script/game_objects/Score.js').wait()
+                .script('/static/ebdjango/script/game_objects/Ball.js').wait()
+                .script('/static/ebdjango/script/game_objects/Stick.js').wait()
+                .script('/static/ebdjango/script/menu/Label.js').wait()
+                .script('/static/ebdjango/script/menu/Button.js').wait()
+                .script('/static/ebdjango/script/menu/Menu.js').wait()
+                .script('/static/ebdjango/script/menu/MainMenu.js').wait()
+                .script('/static/ebdjango/script/AI/Opponent.js').wait()
+                .script('/static/ebdjango/script/AI/AIPolicy.js').wait()
+                .script('/static/ebdjango/script/AI/AITrainer.js').wait()
+                .script('/static/ebdjango/script/game_objects/Player.js').wait()
+                .script('/static/ebdjango/script/GamePolicy.js').wait()
+                .script('/static/ebdjango/script/GameWorld.js').wait()
+                .script('/static/ebdjango/script/Game.js').wait()
+                .script('/static/ebdjango/script/Assets.js').wait(function () {
+                    Game.start('gameArea','screen', 1500, 825);
+                });
+
+    </script>
+</head>
+
+<body style = "background-color:black">
+<div id="gameArea">
+    <canvas id="screen" width="2000" height="1000"></canvas>
+</div>
+Jestem Snooker
+</body>
+</html>

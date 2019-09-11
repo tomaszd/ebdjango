@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
 #from rest_framework import routers, serializers, viewsets
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -47,6 +48,7 @@ urlpatterns = [
                    # matchresult!!!!!!!!!
                    url('^matchresult/(?P<pk>\d+)$', views.result_edit, name='result_detail'),
                    # snooker
+                   url(r'^snooker/$', TemplateView.as_view(template_name='ebdjango/snooker.html'), name="home"),
                    url('^snooker/results/$', views.snooker_results, name='snooker_results'),
                    url('^api/results_list$', views.results_list, name='results_list'),
                    url(r'^admin/', admin.site.urls),
