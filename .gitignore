@@ -1,16 +1,15 @@
-
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 /.idea/
-/.idea/misc.xml
+misc.xml
+ebdjango.iml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/workspace.xml
 .ebextensions/.elasticbeanstalk/
 .elasticbeanstalk/
 bin/
-lib/
 Would skip repository local/
 share/
 *.pyc
