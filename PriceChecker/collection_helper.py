@@ -36,7 +36,7 @@ def getCFBPrice(cardName, cardSet=None):
     startPriceIndex = rawHTML.find("$", tempIndex)
     endPriceIndex = rawHTML.find("<", startPriceIndex)
     cfbPrice = rawHTML[startPriceIndex:endPriceIndex]
-    print "{0}: {1}".format(cardName, cfbPrice)
+    print ("{0}: {1}".format(cardName, cfbPrice))
     return cfbPrice
 
 
@@ -72,7 +72,7 @@ def getTCGPlayerPrices(cardName, cardSet=None):
 
 if __name__ == "__main__":
     start_time = time.time()
-    print 'Example Test'
+    print ('Example Test')
     # input_file = 'tescik.xlsx'
 
     input_file = 'Luty2016.xlsx'
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         iteration += 1
         if karta['nazwa'] in lazy_loading_dict.keys():
             price = lazy_loading_dict[karta['nazwa']]
-            print "Already price was taken for {} it is {}".format(karta['nazwa'], price)
+            print ("Already price was taken for {} it is {}".format(karta['nazwa'], price))
 
         else:
             price = "0"
@@ -114,20 +114,20 @@ if __name__ == "__main__":
         'expansion_set': 'Magic+2012'}
         """
             except:
-                print "issues for {}".format(karta)
+                print ("issues for {}".format(karta))
                 errors.append(karta)
 
         lazy_loading_dict[karta['nazwa']] = price
         if card_details['price'] != "strange":
             total += karta['ilosc'] * float(
                 price.replace('$', '').replace(",", "."))
-        print " after adding {} {} - worth total in EURO :  {} -> added {}".format(
+        print (" after adding {} {} - worth total in EURO :  {} -> added {}".format(
             karta['ilosc'],
             price,
             total,
-            karta['nazwa'])
-        print "Processed : " + str(iteration) + " / " + str(len_my_cards) + " , " + str(
-            iteration * 100 / len_my_cards) + " %"
+            karta['nazwa']))
+        print ("Processed : " + str(iteration) + " / " + str(len_my_cards) + " , " + str(
+            iteration * 100 / len_my_cards) + " %")
         """
         
     except:
@@ -139,12 +139,12 @@ if __name__ == "__main__":
     timestamp = datetime.datetime.now().strftime("%Y_%m_%d")
     result_path = "/home/" + os.getlogin() + "/Results/"
     if not os.path.exists(result_path):
-        print "There is no path {} . Creating it".format(result_path)
+        print ("There is no path {} . Creating it".format(result_path))
         os.mkdir(result_path)
 
 
     if not os.path.exists(result_path):
-        print "There is no path {} . Creating it".format(result_path)
+        print ("There is no path {} . Creating it".format(result_path))
         os.mkdir(result_path)
 
     with open(os.path.join(result_path,
@@ -156,5 +156,5 @@ if __name__ == "__main__":
     with open(os.path.join(result_path,
                            'total_' + timestamp + '.txt'), 'w') as detail_outfile:
         json.dump(total, detail_outfile)
-    print "Finito!!!!! It takes : ", time.time() - start_time, " seconds "
-    print "results visible in result_path: ", result_path
+    print ("Finito!!!!! It takes : ", time.time() - start_time, " seconds ")
+    print ("results visible in result_path: ", result_path)

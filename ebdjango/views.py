@@ -1,18 +1,19 @@
 # coding=utf-8
 import json
-
 import os
+
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader, RequestContext
-#from rest_framework import viewsets
 
 from ebdjango import models
 from ebdjango.forms import MatchResultForm
 from ebdjango.models import TVSetting, Player, MatchResult
-from ebdjango.serializers import PlayerSerializer
 from .serializers import MatchResultSerializer
+
+
+# from rest_framework import viewsets
 
 
 def index(request):

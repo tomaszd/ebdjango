@@ -15,3 +15,5 @@ important file
 fierce-bastion-18522.herokuapp.com/
 ##################################
 heroku apps:rename tomaszd
+##################################
+https://tomaszd.herokuapp.com
