@@ -5,11 +5,11 @@ var sounds = {};
 
 Game.loadAssets = function () {
     var loadSprite = function (sprite) {
-        return Game.loadSprite("assets/sprites/" + sprite);
+        return Game.loadSprite("/static/ebdjango/assets/sprites/" + sprite);
     };
 
      var loadSound = function (sound) {
-        return new Audio("assets/sounds/" + sound);
+        return new Audio("/static/ebdjango/assets/sounds/" + sound);
     };
 
     sprites.mainMenuBackground = loadSprite("main_menu_background.png");
