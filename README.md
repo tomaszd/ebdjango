@@ -3,7 +3,7 @@
 eb status  -status of eb
 eb appversion -> deployment history https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-appversion.html
 ```
-#Save the file, and then deploy your application by running eb deploy. When you run eb deploy, the EB CLI bundles up the contents of your project directory and deploys it to your environment.
+Save the file, and then deploy your application by running eb deploy. When you run eb deploy, the EB CLI bundles up the contents of your project directory and deploys it to your environment.
 ```
 ~/ebdjango$ eb deploy
 ```
@@ -69,7 +69,7 @@ cd /opt/python/current/app
 python manage.py dumpdata --indent 4  ~>db.json
 python manage.py loaddata ~/db.json
 ```
-to store pips:
+### to store pip  reqs:
 ```
 pip3 requirements + venv ->  ebdjango/bin/venv3/bin/activate
 django2.0:
