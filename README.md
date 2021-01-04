@@ -1,8 +1,8 @@
 ### Api 
-
+```
 eb status  -status of eb
 eb appversion -> deployment history https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-appversion.html
-
+```
 #Save the file, and then deploy your application by running eb deploy. When you run eb deploy, the EB CLI bundles up the contents of your project directory and deploys it to your environment.
 ~/ebdjango$ eb deploy
 If you are using Git with your project, see Using the EB CLI with Git.
@@ -15,13 +15,14 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-djan
 how to start :
 
 ##########################
-#aws:
+# aws:
+```
 eb status  -status of eb
 eb appversion -> deployment history https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-appversion.html
 eb deploy
 eb open
 eb ssh
-
+```
 #############      migrations  ################
 python manage.py makemigrations ebdjango
 python manage.py migrate
