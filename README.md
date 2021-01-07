@@ -1,5 +1,5 @@
-simple example app to store results of played match inside company 
-example deployment: https://tomaszd.herokuapp.com
+Simple example app to store results of played match inside company 
+Example deployment: https://tomaszd.herokuapp.com
 ### Api 
 ```
 eb status  -status of eb
