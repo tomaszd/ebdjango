@@ -1,4 +1,5 @@
 Simple example app to store results of played match inside company 
+
 Example deployment: https://tomaszd.herokuapp.com
 ### Api 
 ```
