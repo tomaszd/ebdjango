@@ -4,7 +4,7 @@ certifi==2019.6.16
 chardet==3.0.4
 decorator==4.4.0
 Django==1.9.12
-djangorestframework==3.4.0
+djangorestframework==3.11.2
 enum34==1.1.6
 et-xmlfile==1.0.1
 idna==2.8
